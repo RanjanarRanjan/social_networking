@@ -1,0 +1,183 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section id="adminGroup">
+    <div class="userContainer">
+        <div class="left">
+            <div class="logoFrame">
+                <img src="{% static '/images/logo.svg' %}" alt="logo" />
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="{% url 'chief_user' %}">
+                            <div class="navIcon">
+                                <img
+                                    src="{% static '/images/profile-icon.svg' %}"
+                                    alt="home" />
+                            </div>
+                            Users
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'chief_group' %}">
+                            <div class="navIcon">
+                                <img
+                                    src="{% static '/images/group-icon.svg' %}"
+                                    alt="chats" />
+                            </div>
+                            Groups
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'chief_report' %}">
+                            <div class="navIcon">
+                                <img
+                                    src="{% static '/images/report-icon.svg' %}"
+                                    alt="profile" />
+                            </div>
+                            Reports
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="navIcon">
+                                <img
+                                    src="{% static '/images/settings-icon.svg' %}"
+                                    alt="settings" />
+                            </div>
+                            Settings
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="logout">
+                <ul>
+                    <li>
+                        <a href="#" onclick="confirmLogout()">
+                            <div class="navIcon">
+                                <img
+                                    src="{% static '/images/logout-icon.svg' %}"
+                                    alt="logout" />
+                            </div>
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="right">
+            <div class="top">
+                <div class="search">
+                    <div class="searchIcon">
+                        <img
+                            src="{% static '/images/search-icon.svg' %}"
+                            alt="search" />
+                    </div>
+                    <input type="text" placeholder="Type profile" />
+                </div>
+            </div>
+            <div class="bottom">
+                <h3>Groups</h3>
+                <div class="tableContainer">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Group Name</th>
+                                <th>Group Topic</th>
+                                <th>Username</th>
+                                <th>Gender</th>
+                                <th>Email id</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>John</td>
+                                <td>Doe</td>
+                                <td>johndoe</td>
+                                <td>Male</td>
+                                <td>john@example.com</td>
+                            </tr>
+                            <tr>
+                                <td>John</td>
+                                <td>Doe</td>
+                                <td>johndoe</td>
+                                <td>Male</td>
+                                <td>john@example.com</td>
+                            </tr>
+                            <tr>
+                                <td>John</td>
+                                <td>Doe</td>
+                                <td>johndoe</td>
+                                <td>Male</td>
+                                <td>john@example.com</td>
+                            </tr>
+                            <tr>
+                                <td>John</td>
+                                <td>Doe</td>
+                                <td>johndoe</td>
+                                <td>Male</td>
+                                <td>john@example.com</td>
+                            </tr>
+                            <tr>
+                                <td>John</td>
+                                <td>Doe</td>
+                                <td>johndoe</td>
+                                <td>Male</td>
+                                <td>john@example.com</td>
+                            </tr>
+                            <tr>
+                                <td>John</td>
+                                <td>Doe</td>
+                                <td>johndoe</td>
+                                <td>Male</td>
+                                <td>john@example.com</td>
+                            </tr>
+                            <tr>
+                                <td>John</td>
+                                <td>Doe</td>
+                                <td>johndoe</td>
+                                <td>Male</td>
+                                <td>john@example.com</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div id="logoutModal" class="modal">
+    <div class="modal-content">
+        <h3>Logout</h3>
+        <p>Are you sure you want to logout?</p>
+        <div class="modal-buttons buttonContainer">
+            <button onclick="cancelLogout()">Cancel</button>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function confirmLogout() {
+        var modal = document.getElementById('logoutModal');
+        modal.style.display = 'block';
+    }
+
+    function cancelLogout() {
+        var modal = document.getElementById('logoutModal');
+        modal.style.display = 'none';
+    }
+
+    function logout() {
+        // Redirect the user to the logout URL or perform any logout action here
+        window.location.href = '/login';
+    }
+
+    // Close the modal if the user clicks outside of it
+    window.onclick = function(event) {
+        var modal = document.getElementById('logoutModal');
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+</script>
+{% endblock %}

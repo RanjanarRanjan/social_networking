@@ -1,0 +1,240 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section id="adminReport">
+    <div class="userContainer">
+        <div class="left">
+            <div class="logoFrame">
+                <img src="{% static '/images/logo.svg' %}" alt="logo" />
+            </div>
+            <nav>
+                <ul>
+                    <li class= "active">
+                        <a href="{% url 'chief_user' %}">
+                            <div class="navIcon">
+                                <img
+                                    src="{% static '/images/profile-icon.svg' %}"
+                                    alt="home" />
+                            </div>
+                            Users
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'chief_group' %}">
+                            <div class="navIcon">
+                                <img
+                                    src="{% static '/images/group-icon.svg' %}"
+                                    alt="chats" />
+                            </div>
+                            Groups
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'chief_report' %}">
+                            <div class="navIcon">
+                                <img
+                                    src="{% static '/images/report-icon.svg' %}"
+                                    alt="profile" />
+                            </div>
+                            Reports
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="navIcon">
+                                <img
+                                    src="{% static '/images/settings-icon.svg' %}"
+                                    alt="settings" />
+                            </div>
+                            Settings
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="logout">
+                <ul>
+                    <li>
+                        <a href="#" onclick="confirmLogout()">
+                            <div class="navIcon">
+                                <img
+                                    src="{% static '/images/logout-icon.svg' %}"
+                                    alt="logout" />
+                            </div>
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="right">
+            <div class="top">
+                <div class="search">
+                    <div class="searchIcon">
+                        <img
+                            src="{% static '/images/search-icon.svg' %}"
+                            alt="search" />
+                    </div>
+                    <input type="text" placeholder="Type profile" />
+                </div>
+            </div>
+            <div class="bottom">
+                <h3>Reports</h3>
+                <div class="toggle-buttons">
+                    <button id="accountBtn" class="active" onclick="showAccountTable()">Accounts</button>
+                    <button id="postBtn" onclick="showPostTable()">Posts</button>
+                </div>
+                
+                <div class="tableContainer" id="postTable" style="display:none;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Reporter Name</th>
+                                <th>Email ID</th>
+                                <th>Reason</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>User123</td>
+                                <td>ReporterXYZ</td>
+                                <td>user@example.com</td>
+                                <td>Spam</td>
+                                <td><button class="delete-btn" onclick="deletePost()">Delete Post</button></td>
+                            </tr>
+                            <tr>
+                                <td>User123</td>
+                                <td>ReporterXYZ</td>
+                                <td>user@example.com</td>
+                                <td>Spam</td>
+                                <td><button class="delete-btn" onclick="deletePost()">Delete Post</button></td>
+                            </tr>
+                            <tr>
+                                <td>User123</td>
+                                <td>ReporterXYZ</td>
+                                <td>user@example.com</td>
+                                <td>Spam</td>
+                                <td><button class="delete-btn" onclick="deletePost()">Delete Post</button></td>
+                            </tr>
+                            <tr>
+                                <td>User123</td>
+                                <td>ReporterXYZ</td>
+                                <td>user@example.com</td>
+                                <td>Spam</td>
+                                <td><button class="delete-btn" onclick="deletePost()">Delete Post</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tableContainer" id="accountTable">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Reporter Name</th>
+                                <th>Email ID</th>
+                                <th>Reason</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>User123</td>
+                                <td>ReporterXYZ</td>
+                                <td>user@example.com</td>
+                                <td>Spam</td>
+                                <td><button class="delete-btn" onclick="deletePost()">Block Account</button></td>
+                            </tr>
+                            <tr>
+                                <td>User123</td>
+                                <td>ReporterXYZ</td>
+                                <td>user@example.com</td>
+                                <td>Spam</td>
+                                <td><button class="delete-btn" onclick="deletePost()">Block Account</button></td>
+                            </tr>
+                            <tr>
+                                <td>User123</td>
+                                <td>ReporterXYZ</td>
+                                <td>user@example.com</td>
+                                <td>Spam</td>
+                                <td><button class="delete-btn" onclick="deletePost()">Block Account</button></td>
+                            </tr>
+                            <tr>
+                                <td>User123</td>
+                                <td>ReporterXYZ</td>
+                                <td>user@example.com</td>
+                                <td>Spam</td>
+                                <td><button class="delete-btn" onclick="deletePost()">Block Account</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div id="logoutModal" class="modal">
+    <div class="modal-content">
+        <h3>Logout</h3>
+        <p>Are you sure you want to logout?</p>
+        <div class="modal-buttons buttonContainer">
+            <button onclick="cancelLogout()">Cancel</button>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function confirmLogout() {
+        var modal = document.getElementById('logoutModal');
+        modal.style.display = 'block';
+    }
+
+    function cancelLogout() {
+        var modal = document.getElementById('logoutModal');
+        modal.style.display = 'none';
+    }
+
+    function logout() {
+        // Redirect the user to the logout URL or perform any logout action here
+        window.location.href = '/login';
+    }
+
+    // Close the modal if the user clicks outside of it
+    window.onclick = function(event) {
+        var modal = document.getElementById('logoutModal');
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+    function showAccountTable() {
+        document.getElementById('accountTable').style.display = 'block';
+        document.getElementById('postTable').style.display = 'none';
+        document.getElementById('accountBtn').classList.add('active');
+        document.getElementById('postBtn').classList.remove('active');
+    }
+
+    function showPostTable() {
+        document.getElementById('accountTable').style.display = 'none';
+        document.getElementById('postTable').style.display = 'block';
+        document.getElementById('postBtn').classList.add('active');
+        document.getElementById('accountBtn').classList.remove('active');
+    }
+    // Get all toggle buttons
+var toggleButtons = document.querySelectorAll('#adminReport .userContainer .right .bottom .toggle-buttons button');
+
+// Add event listener to each button
+toggleButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+        // Remove active class from all buttons
+        toggleButtons.forEach(function(btn) {
+            btn.classList.remove('active');
+        });
+        
+        // Add active class to the clicked button
+        this.classList.add('active');
+    });
+});
+
+</script>
+
+{% endblock %}

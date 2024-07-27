@@ -1,0 +1,668 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section id="otherCommunity">
+    <div class="userContainer">
+        <div class="left">
+            <div class="logoFrame">
+                <img src="{% static '/images/logo.svg' %}" alt="logo" />
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="{% url 'user_home' %}">
+                            <div class="navIcon">
+                                <img
+                                    src="{% static '/images/home.svg' %}"
+                                    alt="home" />
+                            </div>
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'user_chat' %}">
+                            <div class="navIcon">
+                                <img
+                                    src="{% static '/images/chat-icon.svg' %}"
+                                    alt="chats" />
+                            </div>
+                            Chats
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'user_profile' %}">
+                            <div class="navIcon">
+                                <img
+                                    src="{% static '/images/profile-icon.svg' %}"
+                                    alt="profile" />
+                            </div>
+                            Profile
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="navIcon">
+                                <img
+                                    src="{% static '/images/settings-icon.svg' %}"
+                                    alt="settings" />
+                            </div>
+                            Settings
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="logout">
+                <ul>
+                    <li>
+                        <a href="#" onclick="confirmLogout()">
+                            <div class="navIcon">
+                                <img
+                                    src="{% static '/images/logout-icon.svg' %}"
+                                    alt="logout" />
+                            </div>
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="right">
+            <div class="top">
+                <div class="welcomeProfile">
+                    <div class="profileImage">
+                        <img
+                            src="{% static '/images/user-profile-image.png' %}"
+                            alt="profile-image" />
+                    </div>
+                    <div class="welcomeName">
+                        <p class="welcome">Hai , Welcome</p>
+                        <p class="name">
+                            {{ request.user.profile.first_name }}
+                            {{request.user.profile.last_name }}
+                        </p>
+                    </div>
+                </div>
+                <div class="search">
+                    <div class="searchIcon">
+                        <img
+                            src="{% static '/images/search-icon.svg' %}"
+                            alt="search" />
+                    </div>
+                    <input type="text" placeholder="Type profile" />
+                </div>
+                <div
+                    class="notification"
+                    onclick="updateAboutSection(); renderFriendRequests();">
+                    <div class="notificationIcon">
+                        <img
+                            src="{% static '/images/notification-icon.svg' %}"
+                            alt="notification" />
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="left">
+                    <h3>← Back</h3>
+                    <div class="communityProfile">
+                        <div class="profileContainer">
+                            <div class="coverPhoto">
+                                <img
+                                    src="{% static '/images/cover-image.png' %}"
+                                    alt="cover-image" />
+                            </div>
+                            <div class="profilePictureInfo">
+                                <div class="profilePicture">
+                                    <img
+                                        src="{{group.image.url}}"
+                                        alt="profile-pic" />
+                                </div>
+                                <div class="profileInfo">
+                                    <div class="infoContainer">
+                                        <div class="nameDesignation">
+                                            <div class="name">
+                                                {{group.name}}
+                                            </div>
+                                            <div class="designation">
+                                                {{group.topic}}
+                                            </div>
+                                        </div>
+                                        <div class="buttonContainer">
+                                            <button class="backgroundButton">
+                                                + Follow
+                                            </button>
+                                            <a
+                                                href="{% url 'community_chat' %}"
+                                                class="backgroundButton">
+                                                <span class="chatIcon">
+                                                    <img
+                                                        src="{% static '/images/chat-icon.svg' %}"
+                                                        alt="" />
+                                                </span>
+                                            </a>
+
+                                            <div
+                                                class="threedot"
+                                                onclick="toggleDropdown()">
+                                                <img
+                                                    src="{% static '/images/threedot.svg' %}"
+                                                    alt="" />
+                                                <div
+                                                    id="dropdownMenu"
+                                                    class="dropdown-content">
+                                                    <a href="#">Report Group</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="jumpingButton">
+                        <ul>
+                            <li>
+                                <a href="#" onclick="selectTab(event, 'posts')">Posts({{ post_count }})</a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="selectTab(event, 'followers')">Followers(30)</a>
+                            </li>
+                        </ul>
+                    </div>
+                    {% for post in group_posts %}
+                    <div class="feedCard">
+                        <div class="cardHead">
+                            <div class="cardProfile">
+                                <div class="profileImage">
+                                    {% if post.created_by.user.image %}
+                                    <img src="{{ post.created_by.user.image.url }}" alt="profile-image" />
+                                    {% else %}
+                                    <p>No image available</p>
+                                    {% endif %}
+                                </div>
+                                <div class="nameTime">
+                                    <p class="name">
+                                        {{ post.created_by.first_name }} {{ post.created_by.last_name }}
+                                    </p>
+                                    <p class="time">
+                                        {{ post.created_at|date:"l, F j, Y H:i" }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="threedot"
+                                onclick="toggleReportDropdown(event)">
+                                <img
+                                    src="{% static '/images/threedot.svg' %}"
+                                    alt="threedot" />
+                                <div
+                                    class="dropdown-contents"
+                                    style="display: none;">
+                                    <a href="#" onclick="reportPost()"
+                                        >Report Post</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cardContent">
+                            <p class="content">{{ post.content }}</p>
+                            {% if post.image %}
+                            <div class="contentImage">
+                                <img
+                                    src="{{ post.image.url }}"
+                                    alt="content-image" />
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="likeComment">
+                            <div class="like">
+                                <div class="likeIcon">
+                                    <img
+                                        src="{% static '/images/like.svg' %}"
+                                        alt="like" />
+                                </div>
+                                <p class="likeCount">
+                                    {{ post.likes.count }} likes
+                                </p>
+                            </div>
+                            <div class="comment">
+                                <img
+                                    src="{% static '/images/comment.svg' %}"
+                                    alt="comment" />
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    <div class="followerList" id="followerList">
+                        <div class="eachFollower">
+                            <div class="followerProfile">
+                                <div class="followerImage">
+                                    <img
+                                        src="{% static '/images/follower-image.png' %}"
+                                        alt="" />
+                                </div>
+                                <div class="nameTime">
+                                    <div class="name">Rodger Struck</div>
+                                    <div class="time">2 hr ago</div>
+                                </div>
+                            </div>
+                            <div class="followButton">
+                                <span class="plus"
+                                    ><img
+                                        src="{% static '/images/plus-icon.svg' %}"
+                                        alt=""
+                                /></span>
+                                Follow
+                            </div>
+                        </div>
+                        <div class="eachFollower">
+                            <div class="followerProfile">
+                                <div class="followerImage">
+                                    <img
+                                        src="{% static '/images/follower-image.png' %}"
+                                        alt="" />
+                                </div>
+                                <div class="nameTime">
+                                    <div class="name">Rodger Struck</div>
+                                    <div class="time">2 hr ago</div>
+                                </div>
+                            </div>
+                            <div class="followButton">
+                                <span class="plus"
+                                    ><img
+                                        src="{% static '/images/plus-icon.svg' %}"
+                                        alt=""
+                                /></span>
+                                Follow
+                            </div>
+                        </div>
+                        <div class="eachFollower">
+                            <div class="followerProfile">
+                                <div class="followerImage">
+                                    <img
+                                        src="{% static '/images/follower-image.png' %}"
+                                        alt="" />
+                                </div>
+                                <div class="nameTime">
+                                    <div class="name">Rodger Struck</div>
+                                    <div class="time">2 hr ago</div>
+                                </div>
+                            </div>
+                            <div class="followButton">
+                                <span class="plus"
+                                    ><img
+                                        src="{% static '/images/plus-icon.svg' %}"
+                                        alt=""
+                                /></span>
+                                Follow
+                            </div>
+                        </div>
+                        <div class="eachFollower">
+                            <div class="followerProfile">
+                                <div class="followerImage">
+                                    <img
+                                        src="{% static '/images/follower-image.png' %}"
+                                        alt="" />
+                                </div>
+                                <div class="nameTime">
+                                    <div class="name">Rodger Struck</div>
+                                    <div class="time">2 hr ago</div>
+                                </div>
+                            </div>
+                            <div class="followButton">
+                                <span class="plus"
+                                    ><img
+                                        src="{% static '/images/plus-icon.svg' %}"
+                                        alt=""
+                                /></span>
+                                Follow
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="about">
+                        <h3>About</h3>
+                        <div class="bio">
+                            <p class="heading">Bio</p>
+                            <p class="content">{{group.bio}}</p>
+                        </div>
+                        <div class="location">
+                            <p class="heading">Location</p>
+                            <p class="content">{{group.location}}</p>
+                        </div>
+                    </div>
+                    <div class="notificationList">
+                        <h3>Notification</h3>
+                        <div class="followingList">
+                            {% for friend_request in friend_requests %}
+                            <div class="eachFollower">
+                                <div class="followerProfile">
+                                    <div class="followerImage">
+                                        <img
+                                            src="{% static '/images/follower-image.png' %}"
+                                            alt="" />
+                                    </div>
+                                    <div class="nameTime">
+                                        <div class="name">
+                                            {{ friend_request.requested_by.user.username }}
+                                            <span class="requested"
+                                                >requested to follow you</span
+                                            >
+                                        </div>
+                                        <div class="time">2 hr ago</div>
+                                    </div>
+                                </div>
+                                <div class="buttonContainer">
+                                    <div class="accept">Accept</div>
+                                    <div class="deny">Deny</div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="modal" id="openEditModal">
+    <div class="modal-content">
+        <h3>Edit Personal details</h3>
+        <span class="close" onclick="closeModal()">&times;</span>
+        <form id="createGroupForm">
+            <div class="field groupImageContainer">
+                <div class="groupImage">
+                    <img
+                        src="{% static '/images/demo-group-image.png' %}"
+                        alt="" />
+                </div>
+                <div class="buttonContent">
+                    <button
+                        type="button"
+                        class="backgroundButton"
+                        onclick="document.getElementById('groupImage').click()">
+                        Upload photo
+                    </button>
+                    <input
+                        type="file"
+                        id="groupImage"
+                        name="groupImage"
+                        hidden />
+                    <p class="imageContent">
+                        Upload your profile picture here, At least 300x300 px
+                        recommended.<br />
+                        JPG or PNG is allowed
+                    </p>
+                </div>
+            </div>
+
+            <div class="field nameContainer">
+                <div class="groupName">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" />
+                </div>
+                <div class="groupTopic">
+                    <label for="dedignation">Designation</label>
+                    <input type="text" id="dedignation" name="dedignation" />
+                </div>
+            </div>
+            <div class="field">
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" />
+            </div>
+
+            <div class="field nameContainer">
+                <div class="groupName">
+                    <label for="education1">Education- 1</label>
+                    <input type="text" id="education1" name="education1" />
+                </div>
+                <div class="groupTopic">
+                    <label for="education2">Education- 2</label>
+                    <input type="text" id="education2" name="education2" />
+                </div>
+            </div>
+
+            <label for="bio">Bio</label>
+            <textarea
+                id="bio"
+                name="bio"
+                rows="4"
+                cols="110"
+                style="resize: none;"></textarea>
+
+            <div class="modal-buttons buttonContainer">
+                <button type="button" onclick="closeModal()">Cancel</button>
+                <button type="submit" class="backgroundButton">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="reportModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Reason for reporting</h2>
+        <div class="reportList">
+            <div class="eachReport">
+                <p class="report">Hate Speech</p>
+            </div>
+            <div class="eachReport">
+                <p class="report">Inappropriate Language</p>
+            </div>
+            <div class="eachReport">
+                <p class="report">Disrespectful Behavior</p>
+            </div>
+            <div class="eachReport">
+                <p class="report">Violent or Threatening Language</p>
+            </div>
+            <div class="eachReport">
+                <p class="report">Other</p>
+            </div>
+        </div>
+        <div class="modal-buttons buttonContainer">
+            <button type="button" onclick="closeModal()">Cancel</button>
+            <button type="submit" class="backgroundButton">Report</button>
+        </div>
+    </div>
+</div>
+<div id="logoutModal" class="modal">
+    <div class="modal-content">
+        <h3>Logout</h3>
+        <p>Are you sure you want to logout?</p>
+        <div class="modal-buttons buttonContainer">
+            <button onclick="cancelLogout()">Cancel</button>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function confirmLogout() {
+        var modal = document.getElementById('logoutModal');
+        modal.style.display = 'block';
+    }
+
+    function cancelLogout() {
+        var modal = document.getElementById('logoutModal');
+        modal.style.display = 'none';
+    }
+
+    function logout() {
+        // Redirect the user to the logout URL or perform any logout action here
+        window.location.href = '/login';
+    }
+
+    // Close the modal if the user clicks outside of it
+    window.onclick = function(event) {
+        var modal = document.getElementById('logoutModal');
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+</script>
+<script src="{% static '/js/edit-modal.js' %}"></script>
+<script>
+        function toggleDropdown() {
+        var dropdownMenu = document.getElementById("dropdownMenu");
+        if (dropdownMenu.style.display === "block") {
+            dropdownMenu.style.display = "none";
+        } else {
+            dropdownMenu.style.display = "block";
+        }
+    }
+</script>
+<script>
+    document.addEventListener('click', function(event) {
+        var modal = document.getElementById("reportModal");
+        // Check if the clicked element is not part of the modal content or the dropdown
+        if (!modal.contains(event.target) && !event.target.classList.contains('threedot')) {
+            closeModal();
+        }
+    });
+
+    function toggleReportDropdown(event) {
+        event.stopPropagation(); // Prevent the click event from bubbling up
+        var dropdown = event.target.nextElementSibling;
+        dropdown.style.display =
+            dropdown.style.display === "block" ? "none" : "block";
+    }
+
+    function reportPost() {
+        var modal = document.getElementById("reportModal");
+        modal.style.display = "block";
+    }
+
+    function closeModal() {
+        var modal = document.getElementById("reportModal");
+        modal.style.display = "none";
+    }
+
+    function submitReport() {
+        var reason = document.getElementById("reportReason").value;
+        // Replace this with your code to submit the report
+        console.log("Report submitted with reason:", reason);
+        closeModal(); // Close the modal after submitting
+    }
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var firstTab = document.querySelector('.jumpingButton ul li:first-child');
+        if (firstTab) {
+            firstTab.classList.add('active');
+        }
+
+        // Show the "Posts" content and hide the rest by default
+        var postsContent = document.getElementById('posts');
+        var followerListContent = document.getElementById('followerList');
+        var followingListContent = document.getElementById('followingList');
+
+        if (postsContent) {
+            postsContent.style.display = 'block';
+        }
+        if (followerListContent) {
+            followerListContent.style.display = 'none';
+        }
+        if (followingListContent) {
+            followingListContent.style.display = 'none';
+        }
+
+        // Hide the feed card initially
+        var feedCard = document.querySelector('.feedCard');
+        if (feedCard) {
+            feedCard.style.display = 'block';
+            followerList.style.display = 'none'
+        }
+    });
+
+    function selectTab(event, tabName) {
+        event.preventDefault();
+
+        // Remove 'active' class from all tab items
+        var listItems = document.querySelectorAll('.jumpingButton ul li');
+        listItems.forEach(function(item) {
+            item.classList.remove('active');
+        });
+
+        // Hide all tab contents
+        var tabContents = document.querySelectorAll('.tab-content > div');
+        tabContents.forEach(function(tab) {
+            tab.style.display = 'none';
+        });
+
+        // Add 'active' class to the clicked tab item
+        var clickedTab = event.target.closest('li');
+        if (clickedTab) {
+            clickedTab.classList.add('active');
+        }
+
+        // Show the corresponding tab content
+        var selectedTabContent = document.getElementById(tabName);
+        if (selectedTabContent) {
+            selectedTabContent.style.display = 'block';
+        }
+
+        // Show/hide followerList or followingList based on the tab selected
+        var followerListContent = document.getElementById('followerList');
+        var followingListContent = document.getElementById('followingList');
+
+        if (followerListContent && followingListContent) {
+            if (tabName === 'followers') {
+                followerListContent.style.display = 'grid';
+                followingListContent.style.display = 'none';
+            } else if (tabName === 'followings') {
+                followingListContent.style.display = 'grid';
+                followerListContent.style.display = 'none';
+            } else {
+                followerListContent.style.display = 'none';
+                followingListContent.style.display = 'none';
+            }
+        }
+
+        // Hide the feed card if "Followers" or "Followings" tab is selected
+        var feedCard = document.querySelector('.feedCard');
+        if (feedCard) {
+            if (tabName === 'followers' || tabName === 'followings') {
+                feedCard.style.display = 'none';
+            } else {
+                feedCard.style.display = 'block';
+            }
+        }
+    }
+</script>
+<!-- <script>
+    function selectTab(event, tabName) {
+        // Remove 'active' class from all tab items
+        var listItems = document.querySelectorAll('.jumpingButton ul li');
+        listItems.forEach(function(item) {
+            item.classList.remove('active');
+        });
+
+        // Add 'active' class to the clicked tab item
+        var clickedTab = event.target.closest('li');
+        if (clickedTab) {
+            clickedTab.classList.add('active');
+        }
+
+        // Hide all tab contents
+        var tabContents = document.querySelectorAll('.tab-content > div');
+        tabContents.forEach(function(tab) {
+            tab.style.display = 'none';
+        });
+
+        // Show the corresponding tab content
+        var selectedTabContent = document.getElementById(tabName);
+        if (selectedTabContent) {
+            selectedTabContent.style.display = 'block';
+        }
+    }
+</script> -->
+<script>
+        function redirectToCreatePost(groupId) {
+        var url = `/community/${groupId}/community-create/`;
+        window.location.href = url;
+    }
+</script>
+<!-- <script src="{% static '/js/followerlist.js' %}"></script> -->
+<!-- <script src="{% static '/js/notification-modal.js' %}"></script> -->
+
+{% endblock %}

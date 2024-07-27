@@ -1,0 +1,639 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section id="userHome">
+    <div class="userContainer">
+        <div class="left">
+            <div class="logoFrame">
+                <img src="{% static '/images/logo.svg' %}" alt="logo" />
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="">
+                            <div class="navIcon">
+                                <img
+                                    src="{% static '/images/home.svg' %}"
+                                    alt="home" />
+                            </div>
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'user_chat' %}">
+                            <div class="navIcon">
+                                <img
+                                    src="{% static '/images/chat-icon.svg' %}"
+                                    alt="chats" />
+                            </div>
+                            Chats
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'user_profile' %}">
+                            <div class="navIcon">
+                                <img
+                                    src="{% static '/images/profile-icon.svg' %}"
+                                    alt="profile" />
+                            </div>
+                            Profile
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="navIcon">
+                                <img
+                                    src="{% static '/images/settings-icon.svg' %}"
+                                    alt="settings" />
+                            </div>
+                            Settings
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="logout">
+                <ul>
+                    <li>
+                        <a href="#" onclick="confirmLogout()">
+                            <div class="navIcon">
+                                <img
+                                    src="{% static '/images/logout-icon.svg' %}"
+                                    alt="logout" />
+                            </div>
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="right">
+            <div class="top">
+                <div class="welcomeProfile">
+                    <div class="profileImage">
+                        <img
+                            src="{% static '/images/user-profile-image.png' %}"
+                            alt="profile-image" />
+                    </div>
+                    <div class="welcomeName">
+                        <p class="welcome">Hai , Welcome</p>
+                        <p class="name">
+                            {{ request.user.profile.first_name }}
+                            {{request.user.profile.last_name }}
+                        </p>
+                    </div>
+                </div>
+                <div class="search">
+                    <div class="searchIcon">
+                        <img
+                            src="{% static '/images/search-icon.svg' %}"
+                            alt="search" />
+                    </div>
+                    <input type="text" placeholder="Type profile" />
+                </div>
+                <div class="notification" onclick="toggleNotificationList()">
+                    <div class="notificationIcon">
+                        <img src="{% static '/images/notification-icon.svg' %}" alt="notification" />
+                    </div>
+                </div>                
+            </div>
+            <div class="bottom">
+                <div class="left">
+                    <div class="createpost">
+                        <p class="createpostHeading">Create a Post</p>
+                        <!-- Ensure that the form's action attribute points to the URL of the view -->
+                        <form
+                            action="{% url 'user_home' %}"
+                            method="POST"
+                            enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="postUpload">
+                                <div class="inputContainer">
+                                    <textarea
+                                        name="post"
+                                        placeholder="What do you want to talk about"
+                                        rows="8"
+                                        cols="110"
+                                        style="resize: none;"></textarea>
+                                </div>
+                                <div class="uploadContainer">
+                                    <div class="fileUpload">
+                                        <div class="videoUpload">
+                                            <img
+                                                src="{% static '/images/video-icon.svg' %}"
+                                                alt="video-upload" />
+                                            <input
+                                                id="videoInput"
+                                                type="file"
+                                                accept="video/*"
+                                                hidden
+                                                name="video_file"
+                                                onchange="previewFile(this, 'videoPreview')" />
+                                        </div>
+                                        <div class="imageUpload">
+                                            <img
+                                                src="{% static '/images/image-icon.svg' %}"
+                                                alt="image-upload" />
+                                            <input
+                                                id="imageInput"
+                                                type="file"
+                                                accept="image/*"
+                                                hidden
+                                                name="image_file"
+                                                onchange="previewFile(this, 'imagePreview')" />
+                                        </div>
+                                    </div>
+                                    <img
+                                        id="videoPreview"
+                                        class="preview"
+                                        src="#"
+                                        alt="Video Preview"
+                                        style="display: none;" />
+                                    <img
+                                        id="imagePreview"
+                                        class="preview"
+                                        src="#"
+                                        alt="Image Preview"
+                                        style="display: none; height: 500px;" />
+                                </div>
+                                <div class="buttonContainer">
+                                    <button
+                                        class="backgroundButton"
+                                        type="submit">
+                                        Post
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="feeds">
+                        <div id="csrf_token">{% csrf_token %}</div>
+                        {% for post in posts %}
+                        <div class="feedCard">
+                            <div class="cardHead">
+                                <div class="cardProfile">
+                                    <div class="profileImage">
+                                        <img
+                                            src="{% static '/images/user-profile-image.png' %}"
+                                            alt="profile-image" />
+                                    </div>
+                                    <div class="nameTime">
+                                        <p class="name">
+                                            {{ post.created_by.first_name }} {{ post.created_by.last_name }}
+                                        </p>
+                                        <p class="time">
+                                            {{ post.created_at|date:"F j, Y H:i" }}
+                                        </p>
+                                        <!-- Assuming you have a created_at field in your UserPost model -->
+                                    </div>
+                                </div>
+                                <div class="threedot">
+                                    <img
+                                        src="{% static '/images/threedot.svg' %}"
+                                        alt="threedot" />
+                                </div>
+                            </div>
+                            <div class="cardContent">
+                                <p class="content">{{ post.content }}</p>
+                                <div class="contentFile">
+                                    {% if post.image %}
+                                    <img
+                                        src="{{ post.image.url }}"
+                                        alt="content-image" />
+                                    {% elif post.video %}
+                                    <video controls class="videoFrame">
+                                        <source
+                                            src="{{ post.video.url }}"
+                                            type="video/mp4" />
+                                        Your browser does not support the video
+                                        tag.
+                                    </video>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="likeComment">
+                                <div class="like" id="likeButton" data-post-id="{{ post.id }}">
+                                    <div class="likeIcon">
+                                        <img class="likeImage"
+                                        {% if post.is_liked_by_user %}
+                                        src="{% static '/images/like.svg' %}"
+                                        {% else %}
+                                        src="{% static '/images/no-like.svg' %}"
+                                        {% endif %}
+                                        alt="like" />
+                                    </div>
+                                    <p class="likeCount">
+                                        <span class="likeCountNumber"> {{ post.liked_count }}</span> likes
+                                    </p>
+                                    <!-- Assuming you have a related_name 'likes' for the ManyToManyField -->
+                                </div>
+                                <div class="comment">
+                                    <img
+                                        src="{% static '/images/comment.svg' %}"
+                                        alt="comment" />
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="group">
+                        <div class="headingButton">
+                            <h3>My Groups</h3>
+                            <button class="groupButton" onclick="openModal()">
+                                Create group
+                            </button>
+                        </div>
+                        {% for group in user_created_groups|slice:":3" %}
+                        <a
+                            href="{% url 'community' group.id %}"
+                            class="eachGroup">
+                            <!-- Include group ID in URL -->
+                            <div class="groupContainer">
+                                <div class="groupImage">
+                                    {% if group.image %}
+                                    <img
+                                        src="{{ group.image.url }}"
+                                        alt="group-image" />
+                                    {% else %}
+                                    <p>No image available</p>
+                                    {% endif %}
+                                </div>
+                                <div class="nameCategory">
+                                    <div class="name">{{ group.name }}</div>
+                                    <div class="category">
+                                        {{ group.topic }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="threedot">
+                                <img
+                                    src="{% static '/images/threedot.svg' %}"
+                                    alt="threedot" />
+                            </div>
+                        </a>
+                        {% endfor %} {% if user_created_groups|length > 3 %}
+                        <div class="showMore" onclick="showMoreGroups()">
+                            + Show more
+                        </div>
+                        <div id="hiddenGroups" style="display: none;">
+                            {% for group in user_created_groups|slice:"3:" %}
+                            <a
+                                href="{% url 'community' group.id %}"
+                                class="eachGroup">
+                                <!-- Include group ID in URL -->
+                                <div class="groupContainer">
+                                    <div class="groupImage">
+                                        {% if group.image %}
+                                        <img
+                                            src="{{ group.image.url }}"
+                                            alt="group-image" />
+                                        {% else %}
+                                        <p>No image available</p>
+                                        {% endif %}
+                                    </div>
+                                    <div class="nameCategory">
+                                        <div class="name">{{ group.name }}</div>
+                                        <div class="category">
+                                            {{ group.topic }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="threedot">
+                                    <img
+                                        src="{% static '/images/threedot.svg' %}"
+                                        alt="threedot" />
+                                </div>
+                            </a>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="suggestedGroup">
+                        <div class="headingButton">
+                            <h3>Suggested groups</h3>
+                        </div>
+                        {% for group in suggested_groups %}
+                        <a
+                            href="{% url 'other_community' group_id=group.id %}"
+                            class="eachGroup">
+                            <div class="groupContainer">
+                                <div class="groupImage">
+                                    {% if group.image %}
+                                    <img
+                                        src="{{ group.image.url }}"
+                                        alt="group-image" />
+                                    {% else %}
+                                    <p>No image available</p>
+                                    {% endif %}
+                                </div>
+                                <div class="nameCategory">
+                                    <div class="name">{{ group.name }}</div>
+                                    <div class="category">
+                                        {{ group.topic }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="buttonContainer">
+                                <button class="backgroundButton">Follow</button>
+                            </div>
+                        </a>
+                        {% endfor %}
+
+                        <div class="showMore">+ Show more</div>
+                    </div>
+                    <div class="suggestedFriends">
+                        <div class="headingButton">
+                            <h3>Suggested Friends</h3>
+                        </div>
+                        {% for friend in suggested_friends %}
+                        <a href="{% url 'other_profile' user_id=friend.id %}" class="eachGroup">
+                            <div class="groupContainer">
+                                <div class="groupImage">
+                                    {% if friend.profile.picture %}
+                                    <img
+                                        src="{{ friend.profile.picture.url }}"
+                                        alt="{{ friend.username }}'s profile picture" />
+                                    {% else %}
+                                    <!-- If no profile picture is available, you can display a default image or initial -->
+                                    <div class="defaultProfilePicture">
+                                        {{ friend.username|first }}
+                                    </div>
+                                    {% endif %}
+                                </div>
+                                <div class="nameCategory">
+                                    <div class="name">{{ friend.profile.first_name }} {{ friend.profile.last_name }}</div>
+                                </div>
+                            </div>
+                            <div class="buttonContainer">
+                                <button class="backgroundButton">Follow</button>
+                            </div>
+                        </a>
+                        {% endfor %}
+
+                        <!-- <div class="showMore">+ Show more</div> -->
+                    </div>
+                    <div class="notificationList" style="display: none;">
+                        <h3>Notification</h3>
+                        <div class="followingList">
+                            {% for notification in notifications %}
+                            <div class="eachFollower">
+                                <div class="followerProfile">
+                                    <div class="followerImage">
+                                        <img
+                                            src="{% static '/images/follower-image.png' %}"
+                                            alt="" />
+                                    </div>
+                                    <div class="nameTime">
+                                        <div class="name">
+                                            {{ notification.user }}
+                                            <span class="requested"
+                                                >requested to follow you</span
+                                            >
+                                        </div>
+                                        <div class="time">{{ notification.created_at|timesince }}</div>
+                                    </div>
+                                </div>
+                                <div class="buttonContainer">
+                                    <div class="accept">Accept</div>
+                                    <div class="deny">Deny</div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="modal" id="createGroupModal">
+    <div class="modal-content">
+        <h3>Create Group</h3>
+        <span class="close" onclick="closeModal()">&times;</span>
+        <form
+            id="createGroupForm"
+            action="{% url 'create_group' %}"
+            method="post"
+            enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="field groupImageContainer">
+                <div class="groupImage">
+                    <img
+                        src="{% static '/images/demo-group-image.png' %}"
+                        alt="" />
+                </div>
+                <div class="buttonContent">
+                    <button
+                        type="button"
+                        class="backgroundButton"
+                        onclick="document.getElementById('groupImage').click()">
+                        Upload photo
+                    </button>
+                    <input
+                        type="file"
+                        id="groupImage"
+                        name="groupImage"
+                        hidden />
+                    <p class="imageContent">
+                        Upload your profile picture here, At least 300x300 px
+                        recommended.<br />
+                        JPG or PNG is allowed
+                    </p>
+                </div>
+            </div>
+
+            <div class="field nameContainer">
+                <div class="groupName">
+                    <label for="groupName">Group Name</label>
+                    <input type="text" id="groupName" name="groupName" />
+                </div>
+                <div class="groupTopic">
+                    <label for="groupTopic">Group Topic</label>
+                    <input type="text" id="groupTopic" name="groupTopic" />
+                </div>
+            </div>
+            <div class="field">
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" />
+            </div>
+
+            <div class="field">
+                <label for="interest">Interest</label>
+                <select id="interest" name="interest[]" class="interest">
+                    <option>Please select {{title}}</option>
+                    {% for interest in interests %}
+                    <option value="{{ interest.id }}">
+                        {{ interest.title }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <label for="bio">Bio</label>
+            <textarea
+                id="bio"
+                name="bio"
+                rows="4"
+                cols="110"
+                style="resize: none;"></textarea>
+
+            <div class="modal-buttons buttonContainer">
+                <button type="button" onclick="closeModal()">Cancel</button>
+                <button type="submit" class="backgroundButton">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal" id="logoutModal">
+    <div class="modal-content">
+        <h3 class="heading">Logout</h3>
+        <div class="question">Are you sure want to logout?</div>
+        <form method="post" action="{% url 'logout_user' %}">
+            {% csrf_token %}
+            <div class="buttonContainer">
+                <button
+                    type="button"
+                    class="borderButton"
+                    onclick="cancelLogout()">
+                    Cancel
+                </button>
+                <button type="submit" class="backgroundButton">Logout</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    const csrf_token_parent = document.getElementById('csrf_token')
+    const like = document.querySelectorAll('.like')
+
+    const csrf_token =  csrf_token_parent.querySelector('input[name="csrfmiddlewaretoken"]')?.value
+    console.log(csrf_token) 
+
+    like.forEach((likeButton) => {
+        
+        likeButton.addEventListener('click', () => {
+
+            const postId = likeButton.getAttribute('data-post-id')
+            const likeImage = likeButton.querySelector('.likeImage')
+            const likeCountNumber = likeButton.querySelector('.likeCount .likeCountNumber')
+            fetch(`/feeds/like-post/${postId}/`,{
+                method: 'POST',
+                headers: {
+                'X-CSRFToken': csrf_token ,
+            },
+            })
+            .then(response=> response.json())
+            .then(data => {
+                console.log(data);
+                if(data.is_liked == true){
+                    likeImage.src = "{% static '/images/like.svg' %}"
+                } else {
+                    likeImage.src = "{% static '/images/no-like.svg' %}"
+                }
+                likeCountNumber.innerHTML = data.likes_count
+            })
+            .catch(error => {
+                console.log('Error:' , error)
+            })
+        })
+    })
+
+
+</script>
+
+<script>
+        function confirmLogout() {
+            var modal = document.getElementById('logoutModal');
+            modal.style.display = 'block';
+        }
+
+        function cancelLogout() {
+            var modal = document.getElementById('logoutModal');
+            modal.style.display = 'none';
+        }
+
+        function logout() {
+            // Redirect the user to the logout URL or perform any logout action here
+            window.location.href = '/login';
+        }
+
+       // Close the modal if the user clicks outside of it
+        window.onclick = function(event) {
+        var modal = document.getElementById('logoutModal');
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+</script>
+
+<script>
+        function openModal() {
+            var modal = document.getElementById('createGroupModal');
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            var modal = document.getElementById('createGroupModal');
+            modal.style.display = 'none';
+        }
+
+        // Close the modal if the user clicks outside of it
+        window.onclick = function(event) {
+            var modal = document.getElementById('createGroupModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+        document.querySelectorAll('.fileUpload img').forEach(img => {
+            img.addEventListener('click', function() {
+                const input = this.parentElement.querySelector('input[type="file"]');
+                input.click();
+            });
+        });
+        //file preview
+
+        function previewFile(input, previewId) {
+        var preview = document.getElementById(previewId);
+        var file = input.files[0];
+        var reader = new FileReader();
+
+        reader.onloadend = function () {
+            preview.src = reader.result;
+            preview.style.display = 'block';
+        }
+
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = '';
+            preview.style.display = 'none';
+        }
+    }
+    function showMoreGroups() {
+        var hiddenGroups = document.getElementById("hiddenGroups");
+        var showMoreButton = document.querySelector(".showMore");
+
+        if (hiddenGroups.style.display === "none") {
+            hiddenGroups.style.display = "block";
+            showMoreButton.textContent = "- Show less";
+        } else {
+            hiddenGroups.style.display = "none";
+            showMoreButton.textContent = "+ Show more";
+        }
+    }
+</script>
+
+<script>
+    function toggleNotificationList() {
+    var notificationList = document.querySelector('.notificationList');
+    if (notificationList.style.display === 'none') {
+        notificationList.style.display = 'block';
+    } else {
+        notificationList.style.display = 'none';
+    }
+}
+
+</script>
+
+{% endblock %}

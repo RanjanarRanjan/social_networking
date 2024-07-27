@@ -1,0 +1,4374 @@
+html {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    background: transparent;
+    font-weight: normal;
+    text-decoration: none;
+    outline: none;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+button {
+    font-family: "InterRegular";
+}
+body {
+    font-family: "InterRegular";
+    color: #1a1919;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+a {
+    color: #000000 !important;
+    font-family: "InterRegular";
+}
+::-webkit-scrollbar {
+    display: none;
+}
+
+.wrapper {
+    max-width: 1800px;
+    margin: 0 auto;
+    width: 95%;
+}
+#login {
+    display: flex;
+    background-color: #6261B0;
+    height: 100vh;
+}
+#login .left {
+    width: 35%;
+    background-color: #6261B0;
+    position: relative;
+}
+#login .left .logoFrame {
+    width: 190px;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(70px, -25px);
+}
+#login .right {
+    flex: 1;
+    position: relative;
+    background-color: #F5F5F8;
+    border-radius: 30px 0 0 30px;
+}
+#login .right .formContainer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+#login .right .formContainer h2 {
+    color: #000000;
+    font-size: 35px;
+    font-family: 'InterMedium';
+    margin-bottom: 12px;
+}
+#login .right .formContainer p {
+    color: #9C9C9C;
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+#login .right .formContainer form label {
+    color: #9798A2;
+    font-size: 18px;
+}
+
+#login .right .formContainer form input {
+    padding: 16px;
+    background-color: #ffffff;
+    width: 450px;
+    border-radius: 8px;
+    margin-top: 8px;
+    margin-bottom: 21px;
+    color: #AAAAAA;
+}
+#login .right .formContainer form .backgroundButton {
+    background-color: #6261B0;
+    width: 100%;
+    height: 60px;
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: 'InterMedium';
+    font-size: 17px;
+    margin-bottom: 50px;
+}
+#login .right .formContainer .accountRegister {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+#login .right .formContainer .accountRegister p.account {
+    font-family: 'InterMedium';
+    margin-bottom: 0;
+}
+#login .right .formContainer .accountRegister a {
+    font-family: 'InterMedium';
+    color: #6261B0 !important;
+}
+#registration {
+    display: flex;
+    background-color: #6261B0;
+    height: 100vh;
+}
+#registration .left {
+    width: 35%;
+    background-color: #6261B0;
+    position: relative;
+}
+#registration .left .logoFrame {
+    width: 190px;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(70px, -25px);
+}
+#registration .right {
+    flex: 1;
+    position: relative;
+    background-color: #F5F5F8;
+    border-radius: 30px 0 0 30px;
+}
+#registration .right .formContainer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    width: 725px;
+}
+#registration .right .formContainer h2 {
+    color: #000000;
+    font-size: 35px;
+    font-family: 'InterMedium';
+    margin-bottom: 12px;
+}
+#registration .right .formContainer p {
+    color: #9C9C9C;
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+
+#registration .right .formContainer form .flexContainer {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 10px;
+    gap: 25px;
+}
+#registration .right .formContainer form .flexContainer .field {
+    display: flex;
+    flex-direction: column;
+}
+#registration .right .formContainer form .flexContainer .field label {
+    color: #9798A2;
+}
+#registration .right .formContainer form .flexContainer .field input {
+    padding: 16px;
+    background-color: #ffffff;
+    width: 350px;
+    border-radius: 8px;
+    color: #070707;
+}
+
+#registration .right .formContainer form .flexContainer .field .genderContainer .bottom {
+    display: flex;
+    justify-content: space-between;
+    background-color: #FFF;
+    padding: 16px;
+    border-radius: 8px;
+    margin-top: 7px;
+    width: 350px;
+}
+#registration .right .formContainer form .flexContainer .field .genderContainer .bottom .radio {
+    width: 15px;
+    margin: 0;
+}
+#registration .right .formContainer form .field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+#registration .right .formContainer form .field .interest {
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    margin-top: 8px;
+}
+#registration .right .formContainer form .field label {
+    color: #9798A2;
+}
+#registration .right .formContainer form .field input {
+    padding: 16px;
+    background-color: #ffffff;
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+    color: #070707;
+    font-size: 16px;
+}
+#registration .right .formContainer form .backgroundButton {
+    background-color: #6261B0;
+    width: 100%;
+    height: 55px;
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: 'InterMedium';
+    font-size: 17px;
+    margin-bottom: 50px;
+}
+#registration .right .formContainer .accountRegister {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+#registration .right .formContainer .accountRegister p.account {
+    font-family: 'InterMedium';
+    margin-bottom: 0;
+}
+#registration .right .formContainer .accountRegister a {
+    font-family: 'InterMedium';
+    color: #6261B0 !important;
+}
+#userHome {
+    background-color: #6261B0;
+    padding: 30px 0 30px 20px;
+    height: 100vh;
+}
+#userHome .userContainer {
+    display: flex;
+}
+#userHome .left {
+    width: 12%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#userHome .userContainer .left .logoFrame {
+    width: 100px;
+    /* margin-bottom: 167px; */
+}
+#userHome .userContainer .left nav ul li {
+    margin-bottom: 16px;
+    padding: 12px ;
+}
+#userHome .userContainer .left nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #FFFFFF !important;
+}
+#userHome .userContainer .left nav ul li a .navIcon {
+    width: 32px;
+}
+#userHome .userContainer .left .logout {
+    /* margin-top: 420px; */
+    padding-left: 12px;
+}
+#userHome .userContainer .left .logout ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #FFFFFF !important;
+}
+#userHome .userContainer .left .logout ul li a .navIcon {
+    width: 32px;
+}
+
+#userHome .userContainer .right {
+    background-color: #F5F5F8;
+    border-radius: 30px 0 0 30px;
+    flex: 1;
+}
+#userHome .userContainer .right .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 32px;
+    border-radius: 30px 0 0 0;
+    border-bottom: 1px solid #EAEAEA;
+    background-color: #FFFFFF;
+}
+#userHome .userContainer .right .top .welcomeProfile {
+    display: flex;
+    gap: 8px;
+}
+#userHome .userContainer .right .top .welcomeProfile .welcomeName .welcome {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterMedium';
+    margin-bottom: 6px;
+}
+#userHome .userContainer .right .top .welcomeProfile .welcomeName .name {
+    color: #070707;
+    font-size: 16px;
+    font-family: 'InterMedium';
+
+}
+#userHome .userContainer .right .top .search {
+    border: 1px solid #EAEAEA;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 16px;
+    border-radius: 16px;
+}
+#userHome .userContainer .right .top .search .searchIcon {
+    width: 40px;
+}
+#userHome .userContainer .right .top .search input{
+    width: 480px;
+    color: #6f6f6f;
+    font-size: 16px;
+}
+
+#userHome .userContainer .right .top .notification .notificationIcon {
+    width: 32px;
+}
+#userHome .userContainer .right .bottom {
+    background-color: #F5F5F8;
+    height: calc(100vh - 140px);
+    overflow-y: auto;
+    display: flex;
+    border-radius: 30px;
+}
+#userHome .userContainer .right .bottom .left {
+    width: 70%;
+    padding: 25px;
+}
+#userHome .userContainer .right .bottom .left .createpost {
+    border-bottom: 1px solid #EAEAEA;
+    padding-bottom: 40px;
+}
+#userHome .userContainer .right .bottom .left .createpost .createpostHeading {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    margin-bottom: 18px;
+}
+#userHome .userContainer .right .bottom .left .createpost form .postUpload {
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    border-radius: 16px;
+}
+#userHome .userContainer .right .bottom .left .createpost .postUpload .inputContainer {
+    height: 166px;
+}
+#userHome .userContainer .right .bottom .left .createpost .postUpload .inputContainer textarea {
+    color: #070707;
+    font-size: 16px;
+    padding: 0;
+}
+#userHome .userContainer .right .bottom .left .createpost .postUpload .uploadContainer {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+}
+#userHome .userContainer .right .bottom .left .createpost .postUpload .uploadContainer .fileUpload {
+    display: flex;
+    align-items: end;
+    gap: 8px;
+    margin-top: 15px;
+}
+#userHome .userContainer .right .bottom .left .createpost .postUpload .buttonContainer {
+    display: flex;
+    justify-content: end;
+}
+#userHome .userContainer .right .bottom .left .createpost .postUpload .buttonContainer .backgroundButton {
+    background-color: #6261B0;
+    border-radius: 8px;
+    padding: 10px 16px;
+    color: #FFFFFF;
+    text-align: end;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+#userHome  .userContainer .right .bottom .left .feeds p.feedHeading {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+#userHome  .userContainer .right .bottom .left .feeds .feedCard {
+    background-color: #FFFFFF;
+    padding: 32px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+}
+#userHome  .userContainer .right .bottom .left .feeds .feedCard .cardHead {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+#userHome  .userContainer .right .bottom .left .feeds .feedCard .cardHead .cardProfile {
+    display: flex;
+    gap: 8px;
+}
+
+#userHome  .userContainer .right .bottom .left .feeds .feedCard .cardHead .cardProfile .nameTime p.name {
+    color: #070707;
+    font-size: 17px;
+    font-family: 'InterMedium';
+    margin-bottom: 6px;
+}
+#userHome  .userContainer .right .bottom .left .feeds .feedCard .cardHead .cardProfile .nameTime p.time {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterRegular';
+}
+#userHome  .userContainer .right .bottom .left .feeds .feedCard .cardHead .threedot {
+    cursor: pointer;
+}
+#userHome  .userContainer .right .bottom .left .feeds .feedCard .cardContent .content {
+    /* width: 70%; */
+}
+#userHome  .userContainer .right .bottom .left .feeds .feedCard .cardContent {
+    border-bottom: 1px solid #F5F5F8;
+    padding-bottom: 26px;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+
+#userHome  .userContainer .right .bottom .left .feeds .feedCard .cardContent .contentFile {
+    /* width: 70%; */
+}
+#userHome  .userContainer .right .bottom .left .feeds .feedCard .cardContent .contentFile .videoFrame {
+    width: 100%;
+}
+
+#userHome  .userContainer .right .bottom .left .feeds .feedCard .cardContent p.content {
+    color: #070707;
+    font-size: 18px;
+    line-height: 30px;
+    margin-bottom: 15px;
+}
+#userHome  .userContainer .right .bottom .left .feeds .feedCard .cardContent .contentImage {
+    width: 100%;
+    margin-top: 16px;
+}
+#userHome  .userContainer .right .bottom .left .feeds .feedCard .likeComment {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    gap: 16px;
+}
+#userHome  .userContainer .right .bottom .left .feeds .feedCard .likeComment .like {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+#userHome .userContainer .right .bottom .right {
+    background-color: #FFFFFF;
+    padding: 24px;
+    border-radius: 0;
+    height: max-content;
+    height: calc(100vh - 160px); /* Adjust the height as needed */
+    overflow-y: auto;
+    position: relative;
+}
+#userHome .userContainer .right .bottom .right .group {
+    border-bottom: 1px solid #F5F5F8;
+    padding-bottom: 30px;
+}
+#userHome .userContainer .right .bottom .right .group .headingButton {
+    display: flex;
+    justify-content: space-between;
+}
+#userHome .userContainer .right .bottom .right .group  .headingButton h3 {
+    color: #070707;
+    font-family: 'InterMedium';
+    font-size: 22px;
+}
+#userHome .userContainer .right .bottom .right .group .headingButton button.groupButton {
+    padding: 8px 16px;
+    background-color: #6261B0;
+    border-radius: 8px;
+    color: #FFF;
+}
+#userHome .userContainer .right .bottom .right .group .eachGroup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+#userHome .userContainer .right .bottom .right .group  .eachGroup .groupContainer {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+#userHome .userContainer .right .bottom .right .group  .eachGroup .groupContainer .groupImage {
+    width: 55px;
+}
+#userHome .userContainer .right .bottom .right .group  .eachGroup .groupContainer .groupImage img {
+    border-radius: 40%;
+}
+#userHome .userContainer .right .bottom .right .group .eachGroup .groupContainer .nameCategory .name {
+    color: #070707;
+    font-size: 18px;
+    font-family: 'InterMedium';
+    margin-bottom: 8px;
+}
+#userHome .userContainer .right .bottom .right .group .eachGroup .groupContainer .nameCategory .category {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterMedium';
+}
+#userHome .userContainer .right .bottom .right .group .eachGroup .threedot{
+    cursor: pointer;
+}
+#userHome .userContainer .right .bottom .right .group .showMore {
+    color: #6261B0;
+    text-align: end;
+    margin-top: 8px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+#userHome .userContainer .right .bottom .right .suggestedGroup {
+    border-bottom: 1px solid #F5F5F8;
+    padding-bottom: 30px;
+    margin-top: 25px;
+}
+#userHome .userContainer .right .bottom .right .suggestedGroup .headingButton {
+    display: flex;
+    justify-content: space-between;
+}
+#userHome .userContainer .right .bottom .right .suggestedGroup  .headingButton h3 {
+    color: #070707;
+    font-family: 'InterMedium';
+    font-size: 22px;
+}
+#userHome .userContainer .right .bottom .right .suggestedGroup .headingButton button.groupButton {
+    padding: 8px 16px;
+    background-color: #6261B0;
+    border-radius: 8px;
+    color: #FFF;
+}
+#userHome .userContainer .right .bottom .right .suggestedGroup .eachGroup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+#userHome .userContainer .right .bottom .right .suggestedGroup  .eachGroup .groupContainer {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+#userHome .userContainer .right .bottom .right .suggestedGroup  .eachGroup .groupContainer .groupImage {
+    width: 50px;
+}
+#userHome .userContainer .right .bottom .right .suggestedGroup  .eachGroup .groupContainer .groupImage  img {
+    border-radius: 50%;
+}
+#userHome .userContainer .right .bottom .right .suggestedGroup .eachGroup .groupContainer .nameCategory .name {
+    color: #070707;
+    font-size: 18px;
+    font-family: 'InterMedium';
+    margin-bottom: 8px;
+}
+#userHome .userContainer .right .bottom .right .suggestedGroup .eachGroup .groupContainer .nameCategory .category {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterMedium';
+}
+
+#userHome .userContainer .right .bottom .right .suggestedGroup .eachGroup .buttonContainer  button.backgroundButton {
+    background-color: #6261B0;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: #FFFFFF;
+}
+#userHome .userContainer .right .bottom .right .suggestedGroup .showMore {
+    color: #6261B0;
+    text-align: end;
+    margin-top: 8px;
+    text-decoration: underline;
+}
+#userHome .userContainer .right .bottom .right .suggestedFriends {
+    border-bottom: 1px solid #F5F5F8;
+    padding-bottom: 30px;
+    margin-top: 25px;
+}
+#userHome .userContainer .right .bottom .right .suggestedFriends .headingButton {
+    display: flex;
+    justify-content: space-between;
+}
+#userHome .userContainer .right .bottom .right .suggestedFriends  .headingButton h3 {
+    color: #070707;
+    font-family: 'InterMedium';
+    font-size: 22px;
+}
+#userHome .userContainer .right .bottom .right .suggestedFriends .headingButton button.groupButton {
+    padding: 8px 16px;
+    background-color: #6261B0;
+    border-radius: 8px;
+    color: #FFF;
+}
+#userHome .userContainer .right .bottom .right .suggestedFriends .eachGroup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+#userHome .userContainer .right .bottom .right .suggestedFriends  .eachGroup .groupContainer {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+#userHome .userContainer .right .bottom .right .suggestedFriends  .eachGroup .groupContainer .groupImage {
+    width: 50px;
+}
+#userHome .userContainer .right .bottom .right .suggestedFriends  .eachGroup .groupContainer .groupImage  img {
+    border-radius: 50%;
+}
+#userHome .userContainer .right .bottom .right .suggestedFriends .eachGroup .groupContainer .nameCategory .name {
+    color: #070707;
+    font-size: 18px;
+    font-family: 'InterMedium';
+}
+#userHome .userContainer .right .bottom .right .suggestedFriends .eachGroup .buttonContainer  button.backgroundButton {
+    background-color: #6261B0;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: #FFFFFF;
+}
+#userHome .userContainer .right .bottom .right .suggestedFriends .showMore {
+    color: #6261B0;
+    text-align: end;
+    margin-top: 8px;
+    text-decoration: underline;
+}
+#userHome .userContainer .right .bottom .right .mySpace {
+    border-bottom: 1px solid #F5F5F8;
+    padding-bottom: 30px;
+    margin-top: 25px;
+}
+#userHome .userContainer .right .bottom .right .mySpace .headingButton {
+    display: flex;
+    justify-content: space-between;
+}
+#userHome .userContainer .right .bottom .right .mySpace  .headingButton h3 {
+    color: #070707;
+    font-family: 'InterMedium';
+    font-size: 22px;
+}
+#userHome .userContainer .right .bottom .right .mySpace .headingButton button.groupButton {
+    padding: 8px 16px;
+    background-color: #6261B0;
+    border-radius: 8px;
+    color: #FFF;
+}
+#userHome .userContainer .right .bottom .right .mySpace .eachGroup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+#userHome .userContainer .right .bottom .right .mySpace  .eachGroup .groupContainer {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+#userHome .userContainer .right .bottom .right .mySpace .eachGroup .groupContainer .nameCategory .name {
+    color: #070707;
+    font-size: 18px;
+    font-family: 'InterMedium';
+    margin-bottom: 8px;
+}
+#userHome .userContainer .right .bottom .right .mySpace .eachGroup .groupContainer .nameCategory .category {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterMedium';
+}
+
+#userHome .userContainer .right .bottom .right .mySpace .eachGroup .buttonContainer  button.backgroundButton {
+    background-color: #6261B0;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: #FFFFFF;
+}
+#userHome .userContainer .right .bottom .right .mySpace .showMore {
+    color: #6261B0;
+    text-align: end;
+    margin-top: 8px;
+    text-decoration: underline;
+}
+#userProfile {
+    background-color: #6261B0;
+    padding: 30px 0 30px 20px;
+    height: 100vh;
+}
+#userProfile .userContainer {
+    display: flex;
+}
+#userProfile .left {
+    width: 12%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#userProfile .userContainer .left .logoFrame {
+    width: 100px;
+    /* margin-bottom: 167px; */
+}
+#userProfile .userContainer .left nav ul li {
+    margin-bottom: 16px;
+    padding: 12px ;
+}
+#userProfile .userContainer .left nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #FFFFFF !important;
+}
+#userProfile .userContainer .left nav ul li a .navIcon {
+    width: 32px;
+}
+#userProfile .userContainer .left .logout {
+    /* margin-top: 420px; */
+    padding-left: 12px;
+}
+#userProfile .userContainer .left .logout ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #FFFFFF !important;
+}
+#userProfile .userContainer .left .logout ul li a .navIcon {
+    width: 32px;
+}
+
+#userProfile .userContainer .right {
+    background-color: #F5F5F8;
+    border-radius: 30px 0 0 30px;
+    flex: 1;
+}
+#userProfile .userContainer .right .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 32px;
+    border-radius: 30px 0 0 0;
+    border-bottom: 1px solid #EAEAEA;
+    background-color: #FFFFFF;
+}
+#userProfile .userContainer .right .top .welcomeProfile {
+    display: flex;
+    gap: 8px;
+}
+#userProfile .userContainer .right .top .welcomeProfile .welcomeName .welcome {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterMedium';
+    margin-bottom: 6px;
+}
+#userProfile .userContainer .right .top .welcomeProfile .welcomeName .name {
+    color: #070707;
+    font-size: 16px;
+    font-family: 'InterMedium';
+
+}
+#userProfile .userContainer .right .top .search {
+    border: 1px solid #EAEAEA;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 16px;
+    border-radius: 16px;
+}
+#userProfile .userContainer .right .top .search .searchIcon {
+    width: 40px;
+}
+#userProfile .userContainer .right .top .search input{
+    width: 480px;
+    color: #6f6f6f;
+    font-size: 16px;
+}
+
+#userProfile .userContainer .right .top .notification .notificationIcon {
+    width: 32px;
+}
+#userProfile .userContainer .right .bottom {
+    background-color: #F5F5F8;
+    height: calc(100vh - 140px);
+    overflow-y: auto;
+    display: flex;
+    border-radius: 30px;
+}
+#userProfile .userContainer .right .bottom .left {
+    width: 70%;
+    padding: 25px;
+}
+#userProfile .userContainer .right .bottom .left .createpost {
+    border-bottom: 1px solid #EAEAEA;
+    padding-bottom: 40px;
+}
+#userProfile .userContainer .right .bottom .left .createpost .createpostHeading {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    margin-bottom: 18px;
+}
+#userProfile .userContainer .right .bottom .left .createpost form .postUpload {
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    border-radius: 16px;
+}
+#userProfile .userContainer .right .bottom .left .createpost .postUpload .inputContainer {
+    height: 166px;
+}
+#userProfile .userContainer .right .bottom .left .createpost .postUpload .uploadContainer {
+    display: flex;
+    justify-content: space-between;
+}
+#userProfile .userContainer .right .bottom .left .createpost .postUpload .uploadContainer .fileUpload {
+    display: flex;
+    gap: 8px;
+}
+#userProfile .userContainer .right .bottom .left .createpost .postUpload .uploadContainer .backgroundButton {
+    background-color: #6261B0;
+    border-radius: 8px;
+    padding: 10px 16px;
+    color: #FFFFFF;
+    text-align: end;
+}
+
+#userProfile  .userContainer .right .bottom .left .feeds p.feedHeading {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+#userProfile  .userContainer .right .bottom .left .feeds .feedCard {
+    background-color: #FFFFFF;
+    padding: 32px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+}
+#userProfile  .userContainer .right .bottom .left .feeds .feedCard .cardHead {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+#userProfile  .userContainer .right .bottom .left .feeds .feedCard .cardHead .cardProfile {
+    display: flex;
+    gap: 8px;
+}
+
+#userProfile  .userContainer .right .bottom .left .feeds .feedCard .cardHead .cardProfile .nameTime p.name {
+    color: #070707;
+    font-size: 17px;
+    font-family: 'InterMedium';
+}
+#userProfile  .userContainer .right .bottom .left .feeds .feedCard .cardHead .cardProfile .nameTime p.time {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterRegular';
+}
+#userProfile  .userContainer .right .bottom .left .feeds .feedCard .cardHead .threedot {
+    cursor: pointer;
+}
+#userProfile  .userContainer .right .bottom .left .feeds .feedCard .cardContent {
+    border-bottom: 1px solid #F5F5F8;
+    padding-bottom: 26px;
+}
+#userProfile  .userContainer .right .bottom .left .feeds .feedCard .cardContent p.content {
+    color: #070707;
+    font-size: 18px;
+    line-height: 30px;
+}
+#userProfile  .userContainer .right .bottom .left .feeds .feedCard .cardContent .contentImage {
+    width: 100%;
+    margin-top: 16px;
+}
+#userProfile  .userContainer .right .bottom .left .feeds .feedCard .likeComment {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    gap: 16px;
+}
+#userProfile  .userContainer .right .bottom .left .feeds .feedCard .likeComment .like {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#userProfile .userContainer .right .bottom .left .myProfile {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 24px 24px 98px 24px;
+}
+#userProfile .userContainer .right .bottom .left h3 {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    margin-bottom: 18px;
+}
+#userProfile .userContainer .right .bottom .left .myProfile .profileContainer {
+
+    position: relative;
+}
+#userProfile .userContainer .right .bottom .left .myProfile .profileContainer .profilePictureInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: self-end;
+    gap: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 75%);
+}
+#userProfile .userContainer .right .bottom .left .myProfile .profileContainer .profilePictureInfo .profilePicture {
+    width: 100px;
+}
+#userProfile .userContainer .right .bottom .left .myProfile .profileContainer .profilePictureInfo .profileInfo  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#userProfile .userContainer .right .bottom .left .myProfile .profileContainer .profilePictureInfo .profileInfo .infoContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 910px;
+}
+
+#userProfile .userContainer .right .bottom .left .myProfile .profileContainer .profilePictureInfo .profileInfo .infoContainer .nameDesignation .name {
+    color: #070707;
+    font-family: 'InterMedium';
+    font-size: 18px;
+}
+#userProfile .userContainer .right .bottom .left .myProfile .profileContainer .profilePictureInfo .profileInfo .infoContainer .nameDesignation .designation {
+    color: #A4A4A4;
+    font-family: 'InterMedium';
+    font-size: 14px;
+    margin-top: 8px;
+}
+#userProfile .userContainer .right .bottom .left .myProfile .profileContainer .profileInfo .buttonContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#userProfile .userContainer .right .bottom .left .myProfile .profileContainer .profileInfo .buttonContainer .backgroundButton {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #6261B0;
+    border-radius: 8px;
+    padding: 8px 25px;
+    font-size: 15px;
+    font-family: 'InterMedium';
+    color: white;
+}
+#userProfile .userContainer .right .bottom .left .myProfile .profileContainer .profileInfo .buttonContainer .borderButton {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid #6261B0;
+    border-radius: 8px;
+    padding: 8px 25px;
+    font-size: 15px;
+    font-family: 'InterMedium';
+    color: #6261B0;
+}
+#userProfile .userContainer .right .bottom .left .myProfile .profileContainer .profileInfo .buttonContainer .threedot {
+    cursor: pointer;
+}
+#userProfile .userContainer .right .bottom .left .jumpingButton {
+    margin-top: 36px;
+    margin-bottom: 18px;
+}
+#userProfile .userContainer .right .bottom .left .jumpingButton ul {
+    display: flex;
+    gap: 20px;
+}
+#userProfile .userContainer .right .bottom .left .jumpingButton ul li {
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+#userProfile .userContainer .right .bottom .left .jumpingButton ul li a {
+    color: #AAAAAA !important;
+    
+}
+.jumpingButton ul li.active {
+    background-color: #DBDBF5;
+}
+a.active {
+    color: #6261B0 !important ;
+}
+#userProfile .userContainer .right .bottom .left .feedCard {
+    background-color: #FFFFFF;
+    padding: 32px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+}
+#userProfile .userContainer .right .bottom .left .feedCard .cardHead {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+#userProfile .userContainer .right .bottom .left .feedCard .cardHead .cardProfile {
+    display: flex;
+    gap: 8px;
+}
+
+#userProfile .userContainer .right .bottom .left .feedCard .cardHead .cardProfile .nameTime p.name {
+    color: #070707;
+    font-size: 17px;
+    font-family: 'InterMedium';
+}
+#userProfile .userContainer .right .bottom .left .feedCard .cardHead .cardProfile .nameTime p.time {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterRegular';
+}
+#userProfile .userContainer .right .bottom .left .feedCard .cardHead .threedot {
+    cursor: pointer;
+}
+#userProfile .userContainer .right .bottom .left .feedCard .cardContent {
+    border-bottom: 1px solid #F5F5F8;
+    padding-bottom: 26px;
+}
+#userProfile .userContainer .right .bottom .left .feedCard .cardContent p.content {
+    color: #070707;
+    font-size: 18px;
+    line-height: 30px;
+}
+#userProfile .userContainer .right .bottom .left .feedCard .cardContent .contentImage {
+    width: 100%;
+    margin-top: 16px;
+}
+#userProfile .userContainer .right .bottom .left .feedCard .likeComment {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    gap: 16px;
+}
+#userProfile .userContainer .right .bottom .left .feedCard .likeComment .like {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#userProfile .userContainer .right .bottom .left .followerList {
+    padding: 32px;
+    background-color: #FFFFFF;
+    display: grid;
+    /* display: none; */
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 16px;
+    margin-bottom: 16px;
+
+}
+#userProfile .userContainer .right .bottom .left .followerList .eachFollower {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #F5F5F8;
+    padding: 20px;
+    border-radius: 12px;
+    width: 95%;
+    margin-bottom: 16px;
+}
+#userProfile .userContainer .right .bottom .left .followerList .eachFollower .followerProfile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#userProfile .userContainer .right .bottom .left .followerList .eachFollower .followerProfile .nameTime .name {
+    color: #070707;
+    font-size: 16px;
+    font-family: 'InterMedium';
+    margin-bottom: 4px;
+}
+#userProfile .userContainer .right .bottom .left .followerList .eachFollower .followerProfile .nameTime .time {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterMedium';
+}
+#userProfile .userContainer .right .bottom .left .followerList .eachFollower .followButton {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #6261B0;
+    border-radius: 8px;
+    padding: 7px 20px;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-size: 17px;
+    font-family: 'InterMedium';
+}
+#userProfile .userContainer .right .bottom .left .followingList {
+    padding: 32px;
+    background-color: #FFFFFF;
+    display: grid;
+    /* display: none; */
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 16px;
+}
+#userProfile .userContainer .right .bottom .left .followingList .eachFollower {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #F5F5F8;
+    padding: 20px;
+    border-radius: 12px;
+    width: 95%;
+    margin-bottom: 16px;
+}
+#userProfile .userContainer .right .bottom .left .followingList .eachFollower .followerProfile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#userProfile .userContainer .right .bottom .left .followingList .eachFollower .followerProfile .nameTime .name {
+    color: #070707;
+    font-size: 16px;
+    font-family: 'InterMedium';
+    margin-bottom: 4px;
+}
+#userProfile .userContainer .right .bottom .left .followingList .eachFollower .followerProfile .nameTime .time {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterMedium';
+}
+#userProfile .userContainer .right .bottom .left .followingList .eachFollower .followButton {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* background-color: #6261B0; */
+    border: 1px solid #6261B0;
+    border-radius: 8px;
+    padding: 7px 20px;
+    cursor: pointer;
+    color: #6261B0;
+    font-size: 17px;
+    font-family: 'InterMedium';
+}
+
+/* Notification */
+
+.notificationList {
+    /* display: none; */
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    width: 100%;
+    position: absolute;
+    top:3%;
+}
+.notificationList h3 {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    padding-bottom: 18px;
+    border-bottom: 1px solid #F5F5F8;
+    margin-bottom: 51px;
+}
+
+.notificationList .followingList .eachFollower {
+    /* display: flex; */
+    justify-content: space-between;
+    border-bottom: 1px solid #F5F5F8;
+    padding: 20px;
+    border-radius: 12px;
+    width: 95%;
+    margin-bottom: 16px;
+}
+.notificationList .followingList .eachFollower .followerProfile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.notificationList .followingList .eachFollower .followerProfile .nameTime .name {
+    color: #070707;
+    font-size: 16px;
+    font-family: 'InterMedium';
+    margin-bottom: 4px;
+}
+.notificationList .followingList .eachFollower .followerProfile .nameTime .name span.requested {
+    color: #A2A2A2;
+    font-family: 'InterRegular';
+}
+.notificationList .followingList .eachFollower .followerProfile .nameTime .time {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterMedium';
+}
+.notificationList .followingList .eachFollower .buttonContainer {
+    display: flex;
+    justify-content: end;
+    gap: 8px;
+}
+.notificationList .followingList .eachFollower .buttonContainer .accept {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #6261B0;
+    border: 1px solid #6261B0;
+    border-radius: 8px;
+    padding: 7px 20px;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-size: 17px;
+    font-family: 'InterMedium';
+}
+.notificationList .followingList .eachFollower .buttonContainer .deny {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* background-color: #6261B0; */
+    border: 1px solid #6261B0;
+    border-radius: 8px;
+    padding: 7px 20px;
+    cursor: pointer;
+    color: #6261B0;
+    font-size: 17px;
+    font-family: 'InterMedium';
+}
+#userProfile .userContainer .right .bottom .right {
+    background-color: #FFFFFF;
+    padding: 24px;
+    position: relative;
+    height: 100%;
+}
+#userProfile .userContainer .right .bottom .right .about h3 {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    padding-bottom: 18px;
+    border-bottom: 1px solid #F5F5F8;
+    margin-bottom: 51px;
+}
+#userProfile .userContainer .right .bottom .right .about .bio {
+    margin-bottom: 40px;
+}
+#userProfile .userContainer .right .bottom .right .about .bio p.heading {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    margin-bottom: 8px;
+}
+#userProfile .userContainer .right .bottom .right .about .bio p.content {
+    color: #626262;
+    line-height: 28px;
+}
+#userProfile .userContainer .right .bottom .right .about .location {
+    margin-bottom: 40px;
+}
+#userProfile .userContainer .right .bottom .right .about .location p.heading {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    margin-bottom: 8px;
+}
+#userProfile .userContainer .right .bottom .right .about .location p.content {
+    color: #626262;
+    line-height: 28px;
+}
+#userProfile .userContainer .right .bottom .right .about .education {
+    margin-bottom: 40px;
+}
+#userProfile .userContainer .right .bottom .right .about .education p.heading {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    margin-bottom: 8px;
+}
+#userProfile .userContainer .right .bottom .right .about .education p.content {
+    color: #626262;
+    line-height: 28px;
+}
+
+/* other-profile */
+
+#otherProfile {
+    background-color: #6261B0;
+    padding: 30px 0 30px 20px;
+    height: 100vh;
+}
+#otherProfile .userContainer {
+    display: flex;
+}
+#otherProfile .left {
+    width: 12%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+}
+#otherProfile .userContainer .left .logoFrame {
+    width: 100px;
+    /* margin-bottom: 167px; */
+}
+#otherProfile .userContainer .left nav ul li {
+    margin-bottom: 16px;
+    padding: 12px ;
+}
+#otherProfile .userContainer .left nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #FFFFFF !important;
+}
+#otherProfile .userContainer .left nav ul li a .navIcon {
+    width: 32px;
+}
+#otherProfile .userContainer .left .logout {
+    /* margin-top: 420px; */
+    padding-left: 12px;
+}
+#otherProfile .userContainer .left .logout ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #FFFFFF !important;
+}
+#otherProfile .userContainer .left .logout ul li a .navIcon {
+    width: 32px;
+}
+
+#otherProfile .userContainer .right {
+    background-color: #F5F5F8;
+    border-radius: 30px 0 0 30px;
+    flex: 1;
+}
+#otherProfile .userContainer .right .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 32px;
+    border-radius: 30px 0 0 0;
+    border-bottom: 1px solid #EAEAEA;
+    background-color: #FFFFFF;
+}
+#otherProfile .userContainer .right .top .welcomeProfile {
+    display: flex;
+    gap: 8px;
+}
+#otherProfile .userContainer .right .top .welcomeProfile .welcomeName .welcome {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterMedium';
+    margin-bottom: 6px;
+}
+#otherProfile .userContainer .right .top .welcomeProfile .welcomeName .name {
+    color: #070707;
+    font-size: 16px;
+    font-family: 'InterMedium';
+
+}
+#otherProfile .userContainer .right .top .search {
+    border: 1px solid #EAEAEA;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 16px;
+    border-radius: 16px;
+}
+#otherProfile .userContainer .right .top .search .searchIcon {
+    width: 40px;
+}
+#otherProfile .userContainer .right .top .search input{
+    width: 480px;
+    color: #6f6f6f;
+    font-size: 16px;
+}
+
+#otherProfile .userContainer .right .top .notification .notificationIcon {
+    width: 32px;
+}
+#otherProfile .userContainer .right .bottom {
+    background-color: #F5F5F8;
+    height: calc(100vh - 160px);
+    overflow-y: auto;
+    display: flex;
+    border-radius: 30px;
+}
+#otherProfile .userContainer .right .bottom .left {
+    width: 70%;
+    padding: 25px;
+}
+#otherProfile .userContainer .right .bottom .left .createpost {
+    border-bottom: 1px solid #EAEAEA;
+    padding-bottom: 40px;
+}
+#otherProfile .userContainer .right .bottom .left .createpost .createpostHeading {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    margin-bottom: 18px;
+}
+#otherProfile .userContainer .right .bottom .left .createpost form .postUpload {
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    border-radius: 16px;
+}
+#otherProfile .userContainer .right .bottom .left .createpost .postUpload .inputContainer {
+    height: 166px;
+}
+#otherProfile .userContainer .right .bottom .left .createpost .postUpload .uploadContainer {
+    display: flex;
+    justify-content: space-between;
+}
+#otherProfile .userContainer .right .bottom .left .createpost .postUpload .uploadContainer .fileUpload {
+    display: flex;
+    gap: 8px;
+}
+#otherProfile .userContainer .right .bottom .left .createpost .postUpload .uploadContainer .backgroundButton {
+    background-color: #6261B0;
+    border-radius: 8px;
+    padding: 10px 16px;
+    color: #FFFFFF;
+    text-align: end;
+}
+
+#otherProfile  .userContainer .right .bottom .left .feeds p.feedHeading {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+#otherProfile  .userContainer .right .bottom .left .feeds .feedCard {
+    background-color: #FFFFFF;
+    padding: 32px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+}
+#otherProfile  .userContainer .right .bottom .left .feeds .feedCard .cardHead {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+#otherProfile  .userContainer .right .bottom .left .feeds .feedCard .cardHead .cardProfile {
+    display: flex;
+    gap: 8px;
+}
+
+#otherProfile  .userContainer .right .bottom .left .feeds .feedCard .cardHead .cardProfile .nameTime p.name {
+    color: #070707;
+    font-size: 17px;
+    font-family: 'InterMedium';
+}
+#otherProfile  .userContainer .right .bottom .left .feeds .feedCard .cardHead .cardProfile .nameTime p.time {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterRegular';
+}
+#otherProfile  .userContainer .right .bottom .left .feeds .feedCard .cardHead .threedot {
+    cursor: pointer;
+}
+#otherProfile  .userContainer .right .bottom .left .feeds .feedCard .cardContent {
+    border-bottom: 1px solid #F5F5F8;
+    padding-bottom: 26px;
+}
+#otherProfile  .userContainer .right .bottom .left .feeds .feedCard .cardContent p.content {
+    color: #070707;
+    font-size: 18px;
+    line-height: 30px;
+}
+#otherProfile  .userContainer .right .bottom .left .feeds .feedCard .cardContent .contentImage {
+    width: 100%;
+    margin-top: 16px;
+}
+#otherProfile  .userContainer .right .bottom .left .feeds .feedCard .likeComment {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    gap: 16px;
+}
+#otherProfile  .userContainer .right .bottom .left .feeds .feedCard .likeComment .like {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#otherProfile .userContainer .right .bottom .left .otherProfileDetails {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 24px 24px 98px 24px;
+}
+#otherProfile .userContainer .right .bottom .left h3 {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    margin-bottom: 18px;
+}
+#otherProfile .userContainer .right .bottom .left .otherProfileDetails .profileContainer {
+
+    position: relative;
+}
+#otherProfile .userContainer .right .bottom .left .otherProfileDetails .profileContainer .profilePictureInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: self-end;
+    gap: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 75%);
+}
+#otherProfile .userContainer .right .bottom .left .otherProfileDetails .profileContainer .profilePictureInfo .profilePicture {
+    width: 100px;
+}
+#otherProfile .userContainer .right .bottom .left .otherProfileDetails .profileContainer .profilePictureInfo .profileInfo  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#otherProfile .userContainer .right .bottom .left .otherProfileDetails .profileContainer .profilePictureInfo .profileInfo .infoContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 910px;
+}
+
+#otherProfile .userContainer .right .bottom .left .otherProfileDetails .profileContainer .profilePictureInfo .profileInfo .infoContainer .nameDesignation .name {
+    color: #070707;
+    font-family: 'InterMedium';
+    font-size: 18px;
+}
+#otherProfile .userContainer .right .bottom .left .otherProfileDetails .profileContainer .profilePictureInfo .profileInfo .infoContainer .nameDesignation .designation {
+    color: #A4A4A4;
+    font-family: 'InterMedium';
+    font-size: 14px;
+    margin-top: 8px;
+}
+#otherProfile .userContainer .right .bottom .left .otherProfileDetails .profileContainer .profileInfo .buttonContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#otherProfile .userContainer .right .bottom .left .otherProfileDetails .profileContainer .profileInfo .buttonContainer .backgroundButton {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #6261B0;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-size: 15px;
+    font-family: 'InterMedium';
+    color: white;
+}
+#otherProfile .userContainer .right .bottom .left .otherProfileDetails .profileContainer .profileInfo .buttonContainer .borderButton {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid #6261B0;
+    border-radius: 8px;
+    padding: 8px 25px;
+    font-size: 15px;
+    font-family: 'InterMedium';
+    color: #6261B0;
+}
+#otherProfile .userContainer .right .bottom .left .otherProfileDetails .profileContainer .profileInfo .buttonContainer .backgroundButton .chatIcon {
+    width: 20px;
+}
+#otherProfile .userContainer .right .bottom .left .otherProfileDetails .profileContainer .profileInfo .buttonContainer .threedot {
+    cursor: pointer;
+}
+#otherProfile .userContainer .right .bottom .left .jumpingButton {
+    margin-top: 36px;
+    margin-bottom: 18px;
+}
+#otherProfile .userContainer .right .bottom .left .jumpingButton ul {
+    display: flex;
+    gap: 20px;
+}
+#otherProfile .userContainer .right .bottom .left .jumpingButton ul li {
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+#otherProfile .userContainer .right .bottom .left .jumpingButton ul li a {
+    color: #AAAAAA !important;
+    
+}
+.jumpingButton ul li.active {
+    background-color: #DBDBF5;
+}
+a.active {
+    color: #6261B0 !important ;
+}
+#otherProfile .userContainer .right .bottom .left .feedCard {
+    background-color: #FFFFFF;
+    padding: 32px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+}
+#otherProfile .userContainer .right .bottom .left .feedCard .cardHead {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+#otherProfile .userContainer .right .bottom .left .feedCard .cardHead .cardProfile {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+#otherProfile .userContainer .right .bottom .left .feedCard .cardHead .cardProfile .nameTime p.name {
+    color: #070707;
+    font-size: 17px;
+    font-family: 'InterMedium';
+    margin-bottom: 8px;
+}
+#otherProfile .userContainer .right .bottom .left .feedCard .cardHead .cardProfile .nameTime p.time {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterRegular';
+}
+#otherProfile .userContainer .right .bottom .left .feedCard .cardHead .threedot {
+    cursor: pointer;
+}
+#otherProfile .userContainer .right .bottom .left .feedCard .cardContent {
+    border-bottom: 1px solid #F5F5F8;
+    padding-bottom: 26px;
+}
+#otherProfile .userContainer .right .bottom .left .feedCard .cardContent p.content {
+    color: #070707;
+    font-size: 18px;
+    line-height: 30px;
+}
+#otherProfile .userContainer .right .bottom .left .feedCard .cardContent .contentImage {
+    width: 100%;
+    margin-top: 16px;
+}
+#otherProfile .userContainer .right .bottom .left .feedCard .likeComment {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    gap: 16px;
+}
+#otherProfile .userContainer .right .bottom .left .feedCard .likeComment .like {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#otherProfile .userContainer .right .bottom .left .followerList {
+    padding: 32px;
+    background-color: #FFFFFF;
+    display: grid;
+    /* display: none; */
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 16px;
+    margin-bottom: 16px;
+
+}
+#otherProfile .userContainer .right .bottom .left .followerList .eachFollower {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #F5F5F8;
+    padding: 20px;
+    border-radius: 12px;
+    width: 95%;
+    margin-bottom: 16px;
+}
+#otherProfile .userContainer .right .bottom .left .followerList .eachFollower .followerProfile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#otherProfile .userContainer .right .bottom .left .followerList .eachFollower .followerProfile .nameTime .name {
+    color: #070707;
+    font-size: 16px;
+    font-family: 'InterMedium';
+    margin-bottom: 4px;
+}
+#otherProfile .userContainer .right .bottom .left .followerList .eachFollower .followerProfile .nameTime .time {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterMedium';
+}
+#otherProfile .userContainer .right .bottom .left .followerList .eachFollower .followButton {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #6261B0;
+    border-radius: 8px;
+    padding: 7px 20px;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-size: 17px;
+    font-family: 'InterMedium';
+}
+#otherProfile .userContainer .right .bottom .left .followingList {
+    padding: 32px;
+    background-color: #FFFFFF;
+    display: grid;
+    /* display: none; */
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 16px;
+}
+#otherProfile .userContainer .right .bottom .left .followingList .eachFollower {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #F5F5F8;
+    padding: 20px;
+    border-radius: 12px;
+    width: 95%;
+    margin-bottom: 16px;
+}
+#otherProfile .userContainer .right .bottom .left .followingList .eachFollower .followerProfile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#otherProfile .userContainer .right .bottom .left .followingList .eachFollower .followerProfile .nameTime .name {
+    color: #070707;
+    font-size: 16px;
+    font-family: 'InterMedium';
+    margin-bottom: 4px;
+}
+#otherProfile .userContainer .right .bottom .left .followingList .eachFollower .followerProfile .nameTime .time {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterMedium';
+}
+#otherProfile .userContainer .right .bottom .left .followingList .eachFollower .followButton {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* background-color: #6261B0; */
+    border: 1px solid #6261B0;
+    border-radius: 8px;
+    padding: 7px 20px;
+    cursor: pointer;
+    color: #6261B0;
+    font-size: 17px;
+    font-family: 'InterMedium';
+}
+#otherProfile .userContainer .right .bottom .right {
+    background-color: #FFFFFF;
+    padding: 24px;
+    position: relative;
+    height: 100%;
+}
+#otherProfile .userContainer .right .bottom .right .about h3 {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    padding-bottom: 18px;
+    border-bottom: 1px solid #F5F5F8;
+    margin-bottom: 51px;
+}
+#otherProfile .userContainer .right .bottom .right .about .bio {
+    margin-bottom: 40px;
+}
+#otherProfile .userContainer .right .bottom .right .about .bio p.heading {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    margin-bottom: 8px;
+}
+#otherProfile .userContainer .right .bottom .right .about .bio p.content {
+    color: #626262;
+    line-height: 28px;
+}
+#otherProfile .userContainer .right .bottom .right .about .location {
+    margin-bottom: 40px;
+}
+#otherProfile .userContainer .right .bottom .right .about .location p.heading {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    margin-bottom: 8px;
+}
+#otherProfile .userContainer .right .bottom .right .about .location p.content {
+    color: #626262;
+    line-height: 28px;
+}
+#otherProfile .userContainer .right .bottom .right .about .education {
+    margin-bottom: 40px;
+}
+#otherProfile .userContainer .right .bottom .right .about .education p.heading {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    margin-bottom: 8px;
+}
+#otherProfile .userContainer .right .bottom .right .about .education p.content {
+    color: #626262;
+    line-height: 28px;
+}
+
+/* Community */
+
+#community {
+    background-color: #6261B0;
+    padding: 30px 0 30px 20px;
+    height: 100vh;
+}
+#community .userContainer {
+    display: flex;
+}
+#community .left {
+    width: 12%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#community .userContainer .left .logoFrame {
+    width: 100px;
+    /* margin-bottom: 167px; */
+}
+#community .userContainer .left nav ul li {
+    margin-bottom: 16px;
+    padding: 12px ;
+}
+#community .userContainer .left nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #FFFFFF !important;
+}
+#community .userContainer .left nav ul li a .navIcon {
+    width: 32px;
+}
+#community .userContainer .left .logout {
+    /* margin-top: 420px; */
+    padding-left: 12px;
+}
+#community .userContainer .left .logout ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #FFFFFF !important;
+}
+#community .userContainer .left .logout ul li a .navIcon {
+    width: 32px;
+}
+
+#community .userContainer .right {
+    background-color: #F5F5F8;
+    border-radius: 30px 0 0 30px;
+    flex: 1;
+}
+#community .userContainer .right .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 32px;
+    border-radius: 30px 0 0 0;
+    border-bottom: 1px solid #EAEAEA;
+    background-color: #FFFFFF;
+}
+#community .userContainer .right .top .welcomeProfile {
+    display: flex;
+    gap: 8px;
+}
+#community .userContainer .right .top .welcomeProfile .welcomeName .welcome {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterMedium';
+    margin-bottom: 6px;
+}
+#community .userContainer .right .top .welcomeProfile .welcomeName .name {
+    color: #070707;
+    font-size: 16px;
+    font-family: 'InterMedium';
+
+}
+#community .userContainer .right .top .search {
+    border: 1px solid #EAEAEA;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 16px;
+    border-radius: 16px;
+}
+#community .userContainer .right .top .search .searchIcon {
+    width: 40px;
+}
+#community .userContainer .right .top .search input{
+    width: 480px;
+    color: #6f6f6f;
+    font-size: 16px;
+}
+
+#community .userContainer .right .top .notification .notificationIcon {
+    width: 32px;
+}
+#community .userContainer .right .bottom {
+    background-color: #F5F5F8;
+    height: calc(100vh - 160px);
+    overflow-y: auto;
+    display: flex;
+    border-radius: 30px;
+}
+#community .userContainer .right .bottom .left {
+    width: 70%;
+    padding: 25px;
+}
+#community .userContainer .right .bottom .left .createpost {
+    border-bottom: 1px solid #EAEAEA;
+    padding-bottom: 40px;
+}
+#community .userContainer .right .bottom .left .createpost .createpostHeading {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    margin-bottom: 18px;
+}
+#community .userContainer .right .bottom .left .createpost form .postUpload {
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    border-radius: 16px;
+}
+#community .userContainer .right .bottom .left .createpost .postUpload .inputContainer {
+    height: 166px;
+}
+#community .userContainer .right .bottom .left .createpost .postUpload .uploadContainer {
+    display: flex;
+    justify-content: space-between;
+}
+#community .userContainer .right .bottom .left .createpost .postUpload .uploadContainer .fileUpload {
+    display: flex;
+    gap: 8px;
+}
+#community .userContainer .right .bottom .left .createpost .postUpload .uploadContainer .backgroundButton {
+    background-color: #6261B0;
+    border-radius: 8px;
+    padding: 10px 16px;
+    color: #FFFFFF;
+    text-align: end;
+}
+
+#community  .userContainer .right .bottom .left .feeds p.feedHeading {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+#community  .userContainer .right .bottom .left .feeds .feedCard {
+    background-color: #FFFFFF;
+    padding: 32px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+}
+#community  .userContainer .right .bottom .left .feeds .feedCard .cardHead {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+#community  .userContainer .right .bottom .left .feeds .feedCard .cardHead .cardProfile {
+    display: flex;
+    gap: 8px;
+}
+
+#community  .userContainer .right .bottom .left .feeds .feedCard .cardHead .cardProfile .nameTime p.name {
+    color: #070707;
+    font-size: 17px;
+    font-family: 'InterMedium';
+}
+#community  .userContainer .right .bottom .left .feeds .feedCard .cardHead .cardProfile .nameTime p.time {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterRegular';
+}
+#community  .userContainer .right .bottom .left .feeds .feedCard .cardHead .threedot {
+    cursor: pointer;
+}
+#community  .userContainer .right .bottom .left .feeds .feedCard .cardContent {
+    border-bottom: 1px solid #F5F5F8;
+    padding-bottom: 26px;
+}
+#community  .userContainer .right .bottom .left .feeds .feedCard .cardContent p.content {
+    color: #070707;
+    font-size: 18px;
+    line-height: 30px;
+}
+#community  .userContainer .right .bottom .left .feeds .feedCard .cardContent .contentImage {
+    width: 100%;
+    margin-top: 16px;
+}
+#community  .userContainer .right .bottom .left .feeds .feedCard .likeComment {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    gap: 16px;
+}
+#community  .userContainer .right .bottom .left .feeds .feedCard .likeComment .like {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#community .userContainer .right .bottom .left .communityProfile {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 24px 24px 100px 24px;
+}
+#community .userContainer .right .bottom .left h3 {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    margin-bottom: 18px;
+}
+#community .userContainer .right .bottom .left .communityProfile .profileContainer {
+
+    position: relative;
+}
+#community .userContainer .right .bottom .left .communityProfile .profileContainer .profilePictureInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: self-end;
+    gap: 8px;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, 55%);
+}
+#community .userContainer .right .bottom .left .communityProfile .profileContainer .profilePictureInfo .profilePicture img {
+    border-radius: 50%;
+}
+#community .userContainer .right .bottom .left .communityProfile .profileContainer .profilePictureInfo .profilePicture {
+    width: 85px;
+    height:  70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#community .userContainer .right .bottom .left .communityProfile .profileContainer .profilePictureInfo .profileInfo  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#community .userContainer .right .bottom .left .communityProfile .profileContainer .profilePictureInfo .profileInfo .infoContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 910px;
+}
+
+#community .userContainer .right .bottom .left .communityProfile .profileContainer .profilePictureInfo .profileInfo .infoContainer .nameDesignation .name {
+    color: #070707;
+    font-family: 'InterMedium';
+    font-size: 18px;
+}
+#community .userContainer .right .bottom .left .communityProfile .profileContainer .profilePictureInfo .profileInfo .infoContainer .nameDesignation .designation {
+    color: #A4A4A4;
+    font-family: 'InterMedium';
+    font-size: 14px;
+    margin-top: 8px;
+}
+#community .userContainer .right .bottom .left .communityProfile .profileContainer .profileInfo .buttonContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#community .userContainer .right .bottom .left .communityProfile .profileContainer .profileInfo .buttonContainer .backgroundButton {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #6261B0;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-size: 15px;
+    font-family: 'InterMedium';
+    color: white;
+}
+#community .userContainer .right .bottom .left .communityProfile .profileContainer .profileInfo .buttonContainer .borderButton {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid #6261B0;
+    border-radius: 8px;
+    padding: 8px 25px;
+    font-size: 15px;
+    font-family: 'InterMedium';
+    color: #6261B0;
+}
+#community .userContainer .right .bottom .left .communityProfile .profileContainer .profileInfo .buttonContainer .backgroundButton .chatIcon {
+    width: 20px;
+}
+#community .userContainer .right .bottom .left .communityProfile .profileContainer .profileInfo .buttonContainer .threedot {
+    cursor: pointer;
+}
+#community .userContainer .right .bottom .left .jumpingButton {
+    margin-top: 36px;
+    margin-bottom: 18px;
+}
+#community .userContainer .right .bottom .left .jumpingButton ul {
+    display: flex;
+    gap: 20px;
+}
+#community .userContainer .right .bottom .left .jumpingButton ul li {
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+#community .userContainer .right .bottom .left .jumpingButton ul li a {
+    color: #AAAAAA !important;
+    
+}
+.jumpingButton ul li.active {
+    background-color: #DBDBF5;
+}
+a.active {
+    color: #6261B0 !important ;
+}
+#community .userContainer .right .bottom .left .feedCard {
+    background-color: #FFFFFF;
+    padding: 32px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    position: relative;
+}
+#community .userContainer .right .bottom .left .feedCard .cardHead {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+#community .userContainer .right .bottom .left .feedCard .cardHead .cardProfile {
+    display: flex;
+    gap: 8px;
+}
+
+#community .userContainer .right .bottom .left .feedCard .cardHead .cardProfile .nameTime p.name {
+    color: #070707;
+    font-size: 17px;
+    font-family: 'InterMedium';
+}
+#community .userContainer .right .bottom .left .feedCard .cardHead .cardProfile .nameTime p.time {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterRegular';
+}
+#community .userContainer .right .bottom .left .feedCard .cardHead .threedot {
+    cursor: pointer;
+}
+#community .userContainer .right .bottom .left .feedCard .cardContent {
+    border-bottom: 1px solid #F5F5F8;
+    padding-bottom: 26px;
+}
+#community .userContainer .right .bottom .left .feedCard .cardContent p.content {
+    color: #070707;
+    font-size: 18px;
+    line-height: 30px;
+}
+#community .userContainer .right .bottom .left .feedCard .cardContent .contentImage {
+    width: 100%;
+    margin-top: 16px;
+}
+#community .userContainer .right .bottom .left .feedCard .likeComment {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    gap: 16px;
+}
+#community .userContainer .right .bottom .left .feedCard .likeComment .like {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#community .userContainer .right .bottom .left .followerList {
+    padding: 32px;
+    background-color: #FFFFFF;
+    display: grid;
+    /* display: none; */
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 16px;
+    margin-bottom: 16px;
+
+}
+#community .userContainer .right .bottom .left .followerList .eachFollower {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #F5F5F8;
+    padding: 20px;
+    border-radius: 12px;
+    width: 95%;
+    margin-bottom: 16px;
+}
+#community .userContainer .right .bottom .left .followerList .eachFollower .followerProfile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#community .userContainer .right .bottom .left .followerList .eachFollower .followerProfile .nameTime .name {
+    color: #070707;
+    font-size: 16px;
+    font-family: 'InterMedium';
+    margin-bottom: 4px;
+}
+#community .userContainer .right .bottom .left .followerList .eachFollower .followerProfile .nameTime .time {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterMedium';
+}
+#community .userContainer .right .bottom .left .followerList .eachFollower .followButton {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #6261B0;
+    border-radius: 8px;
+    padding: 7px 20px;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-size: 17px;
+    font-family: 'InterMedium';
+}
+#community .userContainer .right .bottom .left .followingList {
+    padding: 32px;
+    background-color: #FFFFFF;
+    display: grid;
+    /* display: none; */
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 16px;
+}
+#community .userContainer .right .bottom .left .followingList .eachFollower {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #F5F5F8;
+    padding: 20px;
+    border-radius: 12px;
+    width: 95%;
+    margin-bottom: 16px;
+}
+#community .userContainer .right .bottom .left .followingList .eachFollower .followerProfile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#community .userContainer .right .bottom .left .followingList .eachFollower .followerProfile .nameTime .name {
+    color: #070707;
+    font-size: 16px;
+    font-family: 'InterMedium';
+    margin-bottom: 4px;
+}
+#community .userContainer .right .bottom .left .followingList .eachFollower .followerProfile .nameTime .time {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterMedium';
+}
+#community .userContainer .right .bottom .left .followingList .eachFollower .followButton {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* background-color: #6261B0; */
+    border: 1px solid #6261B0;
+    border-radius: 8px;
+    padding: 7px 20px;
+    cursor: pointer;
+    color: #6261B0;
+    font-size: 17px;
+    font-family: 'InterMedium';
+}
+#community .userContainer .right .bottom .right {
+    background-color: #FFFFFF;
+    padding: 24px;
+    position: relative;
+    height: 100%;
+}
+#community .userContainer .right .bottom .right .about h3 {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    padding-bottom: 18px;
+    border-bottom: 1px solid #F5F5F8;
+    margin-bottom: 51px;
+}
+#community .userContainer .right .bottom .right .about .bio {
+    margin-bottom: 40px;
+}
+#community .userContainer .right .bottom .right .about .bio p.heading {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    margin-bottom: 8px;
+}
+#community .userContainer .right .bottom .right .about .bio p.content {
+    color: #626262;
+    line-height: 28px;
+}
+#community .userContainer .right .bottom .right .about .location {
+    margin-bottom: 40px;
+}
+#community .userContainer .right .bottom .right .about .location p.heading {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    margin-bottom: 8px;
+}
+#community .userContainer .right .bottom .right .about .location p.content {
+    color: #626262;
+    line-height: 28px;
+}
+#community .userContainer .right .bottom .right .about .education {
+    margin-bottom: 40px;
+}
+#community .userContainer .right .bottom .right .about .education p.heading {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    margin-bottom: 8px;
+}
+#community .userContainer .right .bottom .right .about .education p.content {
+    color: #626262;
+    line-height: 28px;
+}
+
+/* otherCommunity */
+
+#otherCommunity {
+    background-color: #6261B0;
+    padding: 30px 0 30px 20px;
+    height: 100vh;
+}
+#otherCommunity .userContainer {
+    display: flex;
+}
+#otherCommunity .left {
+    width: 12%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#otherCommunity .userContainer .left .logoFrame {
+    width: 100px;
+    /* margin-bottom: 167px; */
+}
+#otherCommunity .userContainer .left nav ul li {
+    margin-bottom: 16px;
+    padding: 12px ;
+}
+#otherCommunity .userContainer .left nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #FFFFFF !important;
+}
+#otherCommunity .userContainer .left nav ul li a .navIcon {
+    width: 32px;
+}
+#otherCommunity .userContainer .left .logout {
+    /* margin-top: 420px; */
+    padding-left: 12px;
+}
+#otherCommunity .userContainer .left .logout ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #FFFFFF !important;
+}
+#otherCommunity .userContainer .left .logout ul li a .navIcon {
+    width: 32px;
+}
+
+#otherCommunity .userContainer .right {
+    background-color: #F5F5F8;
+    border-radius: 30px 0 0 30px;
+    flex: 1;
+}
+#otherCommunity .userContainer .right .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 32px;
+    border-radius: 30px 0 0 0;
+    border-bottom: 1px solid #EAEAEA;
+    background-color: #FFFFFF;
+}
+#otherCommunity .userContainer .right .top .welcomeProfile {
+    display: flex;
+    gap: 8px;
+}
+#otherCommunity .userContainer .right .top .welcomeProfile .welcomeName .welcome {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterMedium';
+    margin-bottom: 6px;
+}
+#otherCommunity .userContainer .right .top .welcomeProfile .welcomeName .name {
+    color: #070707;
+    font-size: 16px;
+    font-family: 'InterMedium';
+
+}
+#otherCommunity .userContainer .right .top .search {
+    border: 1px solid #EAEAEA;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 16px;
+    border-radius: 16px;
+}
+#otherCommunity .userContainer .right .top .search .searchIcon {
+    width: 40px;
+}
+#otherCommunity .userContainer .right .top .search input{
+    width: 480px;
+    color: #6f6f6f;
+    font-size: 16px;
+}
+
+#otherCommunity .userContainer .right .top .notification .notificationIcon {
+    width: 32px;
+}
+#otherCommunity .userContainer .right .bottom {
+    background-color: #F5F5F8;
+    height: calc(100vh - 160px);
+    overflow-y: auto;
+    display: flex;
+    border-radius: 30px;
+}
+#otherCommunity .userContainer .right .bottom .left {
+    width: 70%;
+    padding: 25px;
+}
+#otherCommunity .userContainer .right .bottom .left .createpost {
+    border-bottom: 1px solid #EAEAEA;
+    padding-bottom: 40px;
+}
+#otherCommunity .userContainer .right .bottom .left .createpost .createpostHeading {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    margin-bottom: 18px;
+}
+#otherCommunity .userContainer .right .bottom .left .createpost form .postUpload {
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    border-radius: 16px;
+}
+#otherCommunity .userContainer .right .bottom .left .createpost .postUpload .inputContainer {
+    height: 166px;
+}
+#otherCommunity .userContainer .right .bottom .left .createpost .postUpload .uploadContainer {
+    display: flex;
+    justify-content: space-between;
+}
+#otherCommunity .userContainer .right .bottom .left .createpost .postUpload .uploadContainer .fileUpload {
+    display: flex;
+    gap: 8px;
+}
+#otherCommunity .userContainer .right .bottom .left .createpost .postUpload .uploadContainer .backgroundButton {
+    background-color: #6261B0;
+    border-radius: 8px;
+    padding: 10px 16px;
+    color: #FFFFFF;
+    text-align: end;
+}
+
+#otherCommunity  .userContainer .right .bottom .left .feeds p.feedHeading {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+#otherCommunity  .userContainer .right .bottom .left .feeds .feedCard {
+    background-color: #FFFFFF;
+    padding: 32px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+}
+#otherCommunity  .userContainer .right .bottom .left .feeds .feedCard .cardHead {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+#otherCommunity  .userContainer .right .bottom .left .feeds .feedCard .cardHead .cardProfile {
+    display: flex;
+    gap: 8px;
+}
+
+#otherCommunity  .userContainer .right .bottom .left .feeds .feedCard .cardHead .cardProfile .nameTime p.name {
+    color: #070707;
+    font-size: 17px;
+    font-family: 'InterMedium';
+}
+#otherCommunity  .userContainer .right .bottom .left .feeds .feedCard .cardHead .cardProfile .nameTime p.time {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterRegular';
+}
+#otherCommunity  .userContainer .right .bottom .left .feeds .feedCard .cardHead .threedot {
+    cursor: pointer;
+}
+#otherCommunity  .userContainer .right .bottom .left .feeds .feedCard .cardContent {
+    border-bottom: 1px solid #F5F5F8;
+    padding-bottom: 26px;
+}
+#otherCommunity  .userContainer .right .bottom .left .feeds .feedCard .cardContent p.content {
+    color: #070707;
+    font-size: 18px;
+    line-height: 30px;
+}
+#otherCommunity  .userContainer .right .bottom .left .feeds .feedCard .cardContent .contentImage {
+    width: 100%;
+    margin-top: 16px;
+}
+#otherCommunity  .userContainer .right .bottom .left .feeds .feedCard .likeComment {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    gap: 16px;
+}
+#otherCommunity  .userContainer .right .bottom .left .feeds .feedCard .likeComment .like {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#otherCommunity .userContainer .right .bottom .left .communityProfile {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 24px 24px 98px 24px;
+}
+#otherCommunity .userContainer .right .bottom .left h3 {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    margin-bottom: 18px;
+}
+#otherCommunity .userContainer .right .bottom .left .communityProfile .profileContainer {
+
+    position: relative;
+}
+#otherCommunity .userContainer .right .bottom .left .communityProfile .profileContainer .profilePictureInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: self-end;
+    gap: 8px;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, 55%);
+}
+#otherCommunity .userContainer .right .bottom .left .communityProfile .profileContainer .profilePictureInfo .profilePicture {
+    width: 85px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#otherCommunity .userContainer .right .bottom .left .communityProfile .profileContainer .profilePictureInfo .profilePicture img {
+    border-radius: 50%;
+}
+#otherCommunity .userContainer .right .bottom .left .communityProfile .profileContainer .profilePictureInfo .profileInfo  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#otherCommunity .userContainer .right .bottom .left .communityProfile .profileContainer .profilePictureInfo .profileInfo .infoContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 910px;
+}
+
+#otherCommunity .userContainer .right .bottom .left .communityProfile .profileContainer .profilePictureInfo .profileInfo .infoContainer .nameDesignation .name {
+    color: #070707;
+    font-family: 'InterMedium';
+    font-size: 18px;
+}
+#otherCommunity .userContainer .right .bottom .left .communityProfile .profileContainer .profilePictureInfo .profileInfo .infoContainer .nameDesignation .designation {
+    color: #A4A4A4;
+    font-family: 'InterMedium';
+    font-size: 14px;
+    margin-top: 8px;
+}
+#otherCommunity .userContainer .right .bottom .left .communityProfile .profileContainer .profileInfo .buttonContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#otherCommunity .userContainer .right .bottom .left .communityProfile .profileContainer .profileInfo .buttonContainer .backgroundButton {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #6261B0;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-size: 15px;
+    font-family: 'InterMedium';
+    color: white;
+}
+#otherCommunity .userContainer .right .bottom .left .communityProfile .profileContainer .profileInfo .buttonContainer .borderButton {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid #6261B0;
+    border-radius: 8px;
+    padding: 8px 25px;
+    font-size: 15px;
+    font-family: 'InterMedium';
+    color: #6261B0;
+}
+#otherCommunity .userContainer .right .bottom .left .communityProfile .profileContainer .profileInfo .buttonContainer .backgroundButton .chatIcon {
+    width: 20px;
+}
+#otherCommunity .userContainer .right .bottom .left .communityProfile .profileContainer .profileInfo .buttonContainer .threedot {
+    cursor: pointer;
+}
+#otherCommunity .userContainer .right .bottom .left .jumpingButton {
+    margin-top: 36px;
+    margin-bottom: 18px;
+}
+#otherCommunity .userContainer .right .bottom .left .jumpingButton ul {
+    display: flex;
+    gap: 20px;
+}
+#otherCommunity .userContainer .right .bottom .left .jumpingButton ul li {
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+#otherCommunity .userContainer .right .bottom .left .jumpingButton ul li a {
+    color: #AAAAAA !important;
+    
+}
+.jumpingButton ul li.active {
+    background-color: #DBDBF5;
+}
+a.active {
+    color: #6261B0 !important ;
+}
+#otherCommunity .userContainer .right .bottom .left .feedCard {
+    background-color: #FFFFFF;
+    padding: 32px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    position: relative;
+}
+#otherCommunity .userContainer .right .bottom .left .feedCard .cardHead {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+#otherCommunity .userContainer .right .bottom .left .feedCard .cardHead .cardProfile {
+    display: flex;
+    gap: 8px;
+}
+
+#otherCommunity .userContainer .right .bottom .left .feedCard .cardHead .cardProfile .nameTime p.name {
+    color: #070707;
+    font-size: 17px;
+    font-family: 'InterMedium';
+}
+#otherCommunity .userContainer .right .bottom .left .feedCard .cardHead .cardProfile .nameTime p.time {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterRegular';
+}
+#otherCommunity .userContainer .right .bottom .left .feedCard .cardHead .threedot {
+    cursor: pointer;
+}
+#otherCommunity .userContainer .right .bottom .left .feedCard .cardContent {
+    border-bottom: 1px solid #F5F5F8;
+    padding-bottom: 26px;
+}
+#otherCommunity .userContainer .right .bottom .left .feedCard .cardContent p.content {
+    color: #070707;
+    font-size: 18px;
+    line-height: 30px;
+}
+#otherCommunity .userContainer .right .bottom .left .feedCard .cardContent .contentImage {
+    width: 100%;
+    margin-top: 16px;
+}
+#otherCommunity .userContainer .right .bottom .left .feedCard .likeComment {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    gap: 16px;
+}
+#otherCommunity .userContainer .right .bottom .left .feedCard .likeComment .like {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#otherCommunity .userContainer .right .bottom .left .followerList {
+    padding: 32px;
+    background-color: #FFFFFF;
+    display: grid;
+    /* display: none; */
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 16px;
+    margin-bottom: 16px;
+
+}
+#otherCommunity .userContainer .right .bottom .left .followerList .eachFollower {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #F5F5F8;
+    padding: 20px;
+    border-radius: 12px;
+    width: 95%;
+    margin-bottom: 16px;
+}
+#otherCommunity .userContainer .right .bottom .left .followerList .eachFollower .followerProfile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#otherCommunity .userContainer .right .bottom .left .followerList .eachFollower .followerProfile .nameTime .name {
+    color: #070707;
+    font-size: 16px;
+    font-family: 'InterMedium';
+    margin-bottom: 4px;
+}
+#otherCommunity .userContainer .right .bottom .left .followerList .eachFollower .followerProfile .nameTime .time {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterMedium';
+}
+#otherCommunity .userContainer .right .bottom .left .followerList .eachFollower .followButton {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #6261B0;
+    border-radius: 8px;
+    padding: 7px 20px;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-size: 17px;
+    font-family: 'InterMedium';
+}
+#otherCommunity .userContainer .right .bottom .left .followingList {
+    padding: 32px;
+    background-color: #FFFFFF;
+    display: grid;
+    /* display: none; */
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 16px;
+}
+#otherCommunity .userContainer .right .bottom .left .followingList .eachFollower {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #F5F5F8;
+    padding: 20px;
+    border-radius: 12px;
+    width: 95%;
+    margin-bottom: 16px;
+}
+#otherCommunity .userContainer .right .bottom .left .followingList .eachFollower .followerProfile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#otherCommunity .userContainer .right .bottom .left .followingList .eachFollower .followerProfile .nameTime .name {
+    color: #070707;
+    font-size: 16px;
+    font-family: 'InterMedium';
+    margin-bottom: 4px;
+}
+#otherCommunity .userContainer .right .bottom .left .followingList .eachFollower .followerProfile .nameTime .time {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterMedium';
+}
+#otherCommunity .userContainer .right .bottom .left .followingList .eachFollower .followButton {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* background-color: #6261B0; */
+    border: 1px solid #6261B0;
+    border-radius: 8px;
+    padding: 7px 20px;
+    cursor: pointer;
+    color: #6261B0;
+    font-size: 17px;
+    font-family: 'InterMedium';
+}
+#otherCommunity .userContainer .right .bottom .right {
+    background-color: #FFFFFF;
+    padding: 24px;
+    position: relative;
+    height: 100%;
+}
+#otherCommunity .userContainer .right .bottom .right .about h3 {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    padding-bottom: 18px;
+    border-bottom: 1px solid #F5F5F8;
+    margin-bottom: 51px;
+}
+#otherCommunity .userContainer .right .bottom .right .about .bio {
+    margin-bottom: 40px;
+}
+#otherCommunity .userContainer .right .bottom .right .about .bio p.heading {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    margin-bottom: 8px;
+}
+#otherCommunity .userContainer .right .bottom .right .about .bio p.content {
+    color: #626262;
+    line-height: 28px;
+}
+#otherCommunity .userContainer .right .bottom .right .about .location {
+    margin-bottom: 40px;
+}
+#otherCommunity .userContainer .right .bottom .right .about .location p.heading {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    margin-bottom: 8px;
+}
+#otherCommunity .userContainer .right .bottom .right .about .location p.content {
+    color: #626262;
+    line-height: 28px;
+}
+#otherCommunity .userContainer .right .bottom .right .about .education {
+    margin-bottom: 40px;
+}
+#otherCommunity .userContainer .right .bottom .right .about .education p.heading {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    margin-bottom: 8px;
+}
+#otherCommunity .userContainer .right .bottom .right .about .education p.content {
+    color: #626262;
+    line-height: 28px;
+}
+
+/* communityCreatePost */
+
+#communityCreate {
+    background-color: #6261B0;
+    padding: 30px 0 30px 20px;
+    height: 100vh;
+}
+#communityCreate .userContainer {
+    display: flex;
+}
+#communityCreate .left {
+    width: 12%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#communityCreate .userContainer .left .logoFrame {
+    width: 100px;
+    /* margin-bottom: 167px; */
+}
+#communityCreate .userContainer .left nav ul li {
+    margin-bottom: 16px;
+    padding: 12px ;
+}
+#communityCreate .userContainer .left nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #FFFFFF !important;
+}
+#communityCreate .userContainer .left nav ul li a .navIcon {
+    width: 32px;
+}
+#communityCreate .userContainer .left .logout {
+    /* margin-top: 420px; */
+    padding-left: 12px;
+}
+#communityCreate .userContainer .left .logout ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #FFFFFF !important;
+}
+#communityCreate .userContainer .left .logout ul li a .navIcon {
+    width: 32px;
+}
+
+#communityCreate .userContainer .right {
+    background-color: #F5F5F8;
+    border-radius: 30px 0 0 30px;
+    flex: 1;
+}
+#communityCreate .userContainer .right .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 32px;
+    border-radius: 30px 0 0 0;
+    border-bottom: 1px solid #EAEAEA;
+    background-color: #FFFFFF;
+}
+#communityCreate .userContainer .right .top .welcomeProfile {
+    display: flex;
+    gap: 8px;
+}
+#communityCreate .userContainer .right .top .welcomeProfile .welcomeName .welcome {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterMedium';
+    margin-bottom: 6px;
+}
+#communityCreate .userContainer .right .top .welcomeProfile .welcomeName .name {
+    color: #070707;
+    font-size: 16px;
+    font-family: 'InterMedium';
+
+}
+#communityCreate .userContainer .right .top .search {
+    border: 1px solid #EAEAEA;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 16px;
+    border-radius: 16px;
+}
+#communityCreate .userContainer .right .top .search .searchIcon {
+    width: 40px;
+}
+#communityCreate .userContainer .right .top .search input{
+    width: 480px;
+    color: #6f6f6f;
+    font-size: 16px;
+}
+
+#communityCreate .userContainer .right .top .notification .notificationIcon {
+    width: 32px;
+}
+#communityCreate .userContainer .right .bottom {
+    background-color: #F5F5F8;
+    height: calc(100vh - 160px);
+    overflow-y: auto;
+    display: flex;
+    border-radius: 30px;
+}
+#communityCreate .userContainer .right .bottom .left {
+    width: 70%;
+    padding: 25px;
+}
+#communityCreate .userContainer .right .bottom .left .createpost {
+    border-bottom: 1px solid #EAEAEA;
+    padding-bottom: 40px;
+}
+#communityCreate .userContainer .right .bottom .left .createpost .createpostHeading {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    margin-bottom: 18px;
+}
+#communityCreate .userContainer .right .bottom .left .createpost form .postUpload {
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    border-radius: 16px;
+}
+#communityCreate .userContainer .right .bottom .left .createpost .postUpload .inputContainer {
+    height: 166px;
+}
+#communityCreate .userContainer .right .bottom .left .createpost .postUpload .uploadContainer {
+    display: flex;
+    justify-content: space-between;
+}
+#communityCreate .userContainer .right .bottom .left .createpost .postUpload .uploadContainer .fileUpload {
+    display: flex;
+    gap: 8px;
+}
+#communityCreate .userContainer .right .bottom .left .createpost .postUpload .buttonContainer {
+    display: flex;
+    justify-content: end;
+}
+#communityCreate .userContainer .right .bottom .left .createpost .postUpload .buttonContainer .backgroundButton {
+    background-color: #6261B0;
+    border-radius: 8px;
+    padding: 10px 16px;
+    color: #FFFFFF;
+    text-align: end;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+#communityCreate  .userContainer .right .bottom .left .feeds p.feedHeading {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+#communityCreate  .userContainer .right .bottom .left .feeds .feedCard {
+    background-color: #FFFFFF;
+    padding: 32px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+}
+#communityCreate  .userContainer .right .bottom .left .feeds .feedCard .cardHead {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+#communityCreate  .userContainer .right .bottom .left .feeds .feedCard .cardHead .cardProfile {
+    display: flex;
+    gap: 8px;
+}
+
+#communityCreate  .userContainer .right .bottom .left .feeds .feedCard .cardHead .cardProfile .nameTime p.name {
+    color: #070707;
+    font-size: 17px;
+    font-family: 'InterMedium';
+}
+#communityCreate  .userContainer .right .bottom .left .feeds .feedCard .cardHead .cardProfile .nameTime p.time {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterRegular';
+}
+#communityCreate  .userContainer .right .bottom .left .feeds .feedCard .cardHead .threedot {
+    cursor: pointer;
+}
+#communityCreate  .userContainer .right .bottom .left .feeds .feedCard .cardContent {
+    border-bottom: 1px solid #F5F5F8;
+    padding-bottom: 26px;
+}
+#communityCreate  .userContainer .right .bottom .left .feeds .feedCard .cardContent p.content {
+    color: #070707;
+    font-size: 18px;
+    line-height: 30px;
+}
+#communityCreate  .userContainer .right .bottom .left .feeds .feedCard .cardContent .contentImage {
+    width: 100%;
+    margin-top: 16px;
+}
+#communityCreate  .userContainer .right .bottom .left .feeds .feedCard .likeComment {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    gap: 16px;
+}
+#communityCreate  .userContainer .right .bottom .left .feeds .feedCard .likeComment .like {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#communityCreate .userContainer .right .bottom .right {
+    background-color: #FFFFFF;
+    padding: 24px;
+    border-radius: 0;
+    height: max-content;
+    height: calc(100vh - 160px); /* Adjust the height as needed */
+    overflow-y: auto;
+    position: relative;
+}
+#communityCreate .userContainer .right .bottom .right .group {
+    border-bottom: 1px solid #F5F5F8;
+    padding-bottom: 30px;
+}
+#communityCreate .userContainer .right .bottom .right .group .headingButton {
+    display: flex;
+    justify-content: space-between;
+}
+#communityCreate .userContainer .right .bottom .right .group  .headingButton h3 {
+    color: #070707;
+    font-family: 'InterMedium';
+    font-size: 22px;
+}
+#communityCreate .userContainer .right .bottom .right .group .headingButton button.groupButton {
+    padding: 8px 16px;
+    background-color: #6261B0;
+    border-radius: 8px;
+    color: #FFF;
+}
+#communityCreate .userContainer .right .bottom .right .group .eachGroup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+#communityCreate .userContainer .right .bottom .right .group  .eachGroup .groupContainer {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+#communityCreate .userContainer .right .bottom .right .group .eachGroup .groupContainer .nameCategory .name {
+    color: #070707;
+    font-size: 18px;
+    font-family: 'InterMedium';
+    margin-bottom: 8px;
+}
+#communityCreate .userContainer .right .bottom .right .group .eachGroup .groupContainer .groupImage {
+    width: 60px;
+}
+#communityCreate .userContainer .right .bottom .right .group .eachGroup .groupContainer .groupImage img{
+    border-radius: 50%;
+}
+#communityCreate .userContainer .right .bottom .right .group .eachGroup .groupContainer .nameCategory .category {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterMedium';
+}
+#communityCreate .userContainer .right .bottom .right .group .eachGroup .threedot{
+    cursor: pointer;
+}
+#communityCreate .userContainer .right .bottom .right .group .showMore {
+    color: #6261B0;
+    text-align: end;
+    margin-top: 8px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+#communityCreate .userContainer .right .bottom .right .suggestedGroup {
+    border-bottom: 1px solid #F5F5F8;
+    padding-bottom: 30px;
+    margin-top: 25px;
+}
+#communityCreate .userContainer .right .bottom .right .suggestedGroup .headingButton {
+    display: flex;
+    justify-content: space-between;
+}
+#communityCreate .userContainer .right .bottom .right .suggestedGroup  .headingButton h3 {
+    color: #070707;
+    font-family: 'InterMedium';
+    font-size: 22px;
+}
+#communityCreate .userContainer .right .bottom .right .suggestedGroup .headingButton button.groupButton {
+    padding: 8px 16px;
+    background-color: #6261B0;
+    border-radius: 8px;
+    color: #FFF;
+}
+#communityCreate .userContainer .right .bottom .right .suggestedGroup .eachGroup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+#communityCreate .userContainer .right .bottom .right .suggestedGroup  .eachGroup .groupContainer {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+#communityCreate .userContainer .right .bottom .right .suggestedGroup .eachGroup .groupContainer .nameCategory .name {
+    color: #070707;
+    font-size: 18px;
+    font-family: 'InterMedium';
+    margin-bottom: 8px;
+}
+#communityCreate .userContainer .right .bottom .right .suggestedGroup .eachGroup .groupContainer .nameCategory .category {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterMedium';
+}
+
+#communityCreate .userContainer .right .bottom .right .suggestedGroup .eachGroup .buttonContainer  button.backgroundButton {
+    background-color: #6261B0;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: #FFFFFF;
+}
+#communityCreate .userContainer .right .bottom .right .suggestedGroup .showMore {
+    color: #6261B0;
+    text-align: end;
+    margin-top: 8px;
+    text-decoration: underline;
+}
+#communityCreate .userContainer .right .bottom .right .mySpace {
+    border-bottom: 1px solid #F5F5F8;
+    padding-bottom: 30px;
+    margin-top: 25px;
+}
+#communityCreate .userContainer .right .bottom .right .mySpace .headingButton {
+    display: flex;
+    justify-content: space-between;
+}
+#communityCreate .userContainer .right .bottom .right .mySpace  .headingButton h3 {
+    color: #070707;
+    font-family: 'InterMedium';
+    font-size: 22px;
+}
+#communityCreate .userContainer .right .bottom .right .mySpace .headingButton button.groupButton {
+    padding: 8px 16px;
+    background-color: #6261B0;
+    border-radius: 8px;
+    color: #FFF;
+}
+#communityCreate .userContainer .right .bottom .right .mySpace .eachGroup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+#communityCreate .userContainer .right .bottom .right .mySpace  .eachGroup .groupContainer {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+#communityCreate .userContainer .right .bottom .right .mySpace .eachGroup .groupContainer .nameCategory .name {
+    color: #070707;
+    font-size: 18px;
+    font-family: 'InterMedium';
+    margin-bottom: 8px;
+}
+#communityCreate .userContainer .right .bottom .right .mySpace .eachGroup .groupContainer .nameCategory .category {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterMedium';
+}
+
+#communityCreate .userContainer .right .bottom .right .mySpace .eachGroup .buttonContainer  button.backgroundButton {
+    background-color: #6261B0;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: #FFFFFF;
+}
+#communityCreate .userContainer .right .bottom .right .mySpace .showMore {
+    color: #6261B0;
+    text-align: end;
+    margin-top: 8px;
+    text-decoration: underline;
+}
+
+/* communityChat */
+
+#communityChat {
+    background-color: #6261B0;
+    padding: 30px 0 30px 20px;
+    height: 100vh;
+}
+#communityChat .userContainer {
+    display: flex;
+}
+#communityChat .left {
+    width: 12%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#communityChat .userContainer .left .logoFrame {
+    width: 100px;
+    /* margin-bottom: 167px; */
+}
+#communityChat .userContainer .left nav ul li {
+    margin-bottom: 16px;
+    padding: 12px ;
+}
+#communityChat .userContainer .left nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #FFFFFF !important;
+}
+#communityChat .userContainer .left nav ul li a .navIcon {
+    width: 32px;
+}
+#communityChat .userContainer .left .logout {
+    /* margin-top: 420px; */
+    padding-left: 12px;
+}
+#communityChat .userContainer .left .logout ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #FFFFFF !important;
+}
+#communityChat .userContainer .left .logout ul li a .navIcon {
+    width: 32px;
+}
+
+#communityChat .userContainer .right {
+    background-color: #F5F5F8;
+    border-radius: 30px 0 0 30px;
+    flex: 1;
+}
+#communityChat .userContainer .right .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 32px;
+    border-radius: 30px 0 0 0;
+    border-bottom: 1px solid #EAEAEA;
+    background-color: #FFFFFF;
+}
+#communityChat .userContainer .right .top .welcomeProfile {
+    display: flex;
+    gap: 8px;
+}
+#communityChat .userContainer .right .top .welcomeProfile .welcomeName .welcome {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterMedium';
+    margin-bottom: 6px;
+}
+#communityChat .userContainer .right .top .welcomeProfile .welcomeName .name {
+    color: #070707;
+    font-size: 16px;
+    font-family: 'InterMedium';
+
+}
+#communityChat .userContainer .right .top .search {
+    border: 1px solid #EAEAEA;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 16px;
+    border-radius: 16px;
+}
+#communityChat .userContainer .right .top .search .searchIcon {
+    width: 40px;
+}
+#communityChat .userContainer .right .top .search input{
+    width: 480px;
+    color: #6f6f6f;
+    font-size: 16px;
+}
+
+#communityChat .userContainer .right .top .notification .notificationIcon {
+    width: 32px;
+}
+#communityChat .userContainer .right .bottom {
+    background-color: #F5F5F8;
+    border-radius: 30px;
+}
+#communityChat .userContainer .right .bottom .chatSection {
+    padding: 10px 32px;
+    background-color: #FFFFFF;
+}
+#communityChat .userContainer .right .bottom .chatSection .chatHeading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #070707;
+    font-family: 'InterMedium';
+    font-size: 18px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #F5F5F8;
+}
+#communityChat .userContainer .right .bottom .chatSection .chatHeading span.familyPhoto {
+    width: 50px;
+}
+#communityChat .userContainer .right .bottom .chatSection .chatBody {
+    margin-top: 30px;
+    height: 520px;
+    overflow-y: auto; 
+}
+
+#communityChat .userContainer .right .bottom .chatSection .chatBody .receiver {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+#communityChat .userContainer .right .bottom .chatSection .chatBody .receiver p.message {
+    background-color: #F5F5F8;
+    padding: 32px;
+    border-radius: 0 16px 16px 16px;
+}
+#communityChat .userContainer .right .bottom .chatSection .chatBody .sender {
+    display: flex;
+    gap: 8px;
+    flex-direction: row-reverse;
+    margin-bottom: 15px;
+}
+#communityChat .userContainer .right .bottom .chatSection .chatBody .sender p.message {
+    background-color: #F5F5F8;
+    padding: 32px;
+    border-radius: 16px 0 16px 16px;
+}
+#communityChat .userContainer .right .bottom .chatSection .chatInput {
+    border: 1px solid #F5F5F8;
+    border-radius: 16px;
+}
+
+#communityChat .userContainer .right .bottom .chatSection .chatInput .createpost .createpostHeading {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    margin-bottom: 18px;
+}
+#communityChat .userContainer .right .bottom .chatSection .chatInput .createpost form .postUpload {
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    border-radius: 16px;
+}
+
+#communityChat .userContainer .right .bottom .chatSection .chatInput .createpost .postUpload .uploadContainer {
+    display: flex;
+    justify-content: space-between;
+}
+#communityChat .userContainer .right .bottom .chatSection .chatInput .createpost .postUpload .uploadContainer .fileUpload {
+    display: flex;
+    gap: 8px;
+}
+#communityChat .userContainer .right .bottom .chatSection .chatInput .createpost .postUpload .uploadContainer .backgroundButton {
+    background-color: #6261B0;
+    border-radius: 8px;
+    padding: 10px 16px;
+    color: #FFFFFF;
+    text-align: end;
+}
+
+/* userChat */
+
+#userChat {
+    background-color: #6261B0;
+    padding: 30px 0 30px 20px;
+    height: 100vh;
+}
+#userChat .userContainer {
+    display: flex;
+}
+#userChat .left {
+    width: 12%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#userChat .userContainer .left .logoFrame {
+    width: 100px;
+    /* margin-bottom: 167px; */
+}
+#userChat .userContainer .left nav ul li {
+    margin-bottom: 16px;
+    padding: 12px ;
+}
+#userChat .userContainer .left nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #FFFFFF !important;
+}
+#userChat .userContainer .left nav ul li a .navIcon {
+    width: 32px;
+}
+#userChat .userContainer .left .logout {
+    /* margin-top: 420px; */
+    padding-left: 12px;
+}
+#userChat .userContainer .left .logout ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #FFFFFF !important;
+}
+#userChat .userContainer .left .logout ul li a .navIcon {
+    width: 32px;
+}
+
+#userChat .userContainer .right {
+    background-color: #F5F5F8;
+    border-radius: 30px 0 0 30px;
+    flex: 1;
+}
+#userChat .userContainer .right .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 32px;
+    border-radius: 30px 0 0 0;
+    border-bottom: 1px solid #EAEAEA;
+    background-color: #FFFFFF;
+}
+#userChat .userContainer .right .top .welcomeProfile {
+    display: flex;
+    gap: 8px;
+}
+#userChat .userContainer .right .top .welcomeProfile .welcomeName .welcome {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterMedium';
+    margin-bottom: 6px;
+}
+#userChat .userContainer .right .top .welcomeProfile .welcomeName .name {
+    color: #070707;
+    font-size: 16px;
+    font-family: 'InterMedium';
+
+}
+#userChat .userContainer .right .top .search {
+    border: 1px solid #EAEAEA;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 16px;
+    border-radius: 16px;
+}
+#userChat .userContainer .right .top .search .searchIcon {
+    width: 40px;
+}
+#userChat .userContainer .right .top .search input{
+    width: 480px;
+    color: #6f6f6f;
+    font-size: 16px;
+}
+
+#userChat .userContainer .right .top .notification .notificationIcon {
+    width: 32px;
+}
+#userChat .userContainer .right .bottom {
+    background-color: #F5F5F8;
+    height: calc(100vh - 140px);
+    display: flex;
+    border-radius: 30px !important;
+}
+#userChat .userContainer .right .bottom .leftside {
+    width: 28%;
+    background-color: #FFFFFF;
+    border: 1px solid #F5F5F8;
+    padding: 24px;
+    border-radius: 30px 0 0 30px;
+}
+#userChat .userContainer .right .bottom .leftside h3 {
+    color: #070707;
+    font-size: 20px;
+    font-family: 'InterMedium';
+    margin-bottom: 30px;
+}
+
+#userChat .userContainer .right .bottom .leftside .userList .eachUser {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 27px;
+    cursor: pointer;
+}
+#userChat .userContainer .right .bottom .leftside .userList .eachUser .imageName {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+#userChat .userContainer .right .bottom .leftside .userList .eachUser .imageName .userImage {
+    width: 50px;
+}
+
+#userChat .userContainer .right .bottom .leftside .userList .eachUser .imageName .nameMessage .name {
+    color: #070707;
+    font-family: 'InterMedium';
+    font-size: 20px;
+}
+#userChat .userContainer .right .bottom .leftside .userList .eachUser .imageName .nameMessage .message {
+    color: #070707;
+    font-family: 'InterMedium';
+    font-size: 14px;
+}
+#userChat .userContainer .right .bottom .leftside .userList .eachUser .messageCount {
+    background-color: #6261B0;
+    border-radius: 50%;
+    color: #FFFFFF;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#userChat .userContainer .right .bottom .right {
+    width: 65%;
+}
+#userChat .userContainer .right .bottom .right .chatSection {
+    padding: 10px 32px;
+    background-color: #FFFFFF;
+}
+#userChat .userContainer .right .bottom .right .chatSection .chatHeading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #070707;
+    font-family: 'InterMedium';
+    font-size: 18px;
+}
+#userChat .userContainer .right .bottom .right .chatSection .chatHeading span.familyPhoto {
+    width: 50px;
+}
+#userChat .userContainer .right .bottom .right .chatSection .chatBody {
+    margin-top: 30px;
+    height: 545px;
+    overflow-y: auto;
+}
+
+#userChat .userContainer .right .bottom .right .chatSection .chatBody .receiver {
+    display: flex;
+    align-self: flex-start;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+#userChat .userContainer .right .bottom .right .chatSection .chatBody .receiver p.message {
+    background-color: #F5F5F8;
+    padding: 12px 16px;
+    border-radius: 10px;
+}
+
+#userChat .userContainer .right .bottom .right .chatSection .chatBody .sender {
+    display: flex;
+    align-self: flex-end;
+    gap: 8px;
+    flex-direction: row-reverse;
+    margin-bottom: 15px;
+}
+
+#userChat .userContainer .right .bottom .right .chatSection .chatBody .sender p.message {
+    background-color: #DCF8C6;
+    padding: 12px 16px;
+    border-radius: 10px;
+}
+
+#userChat .userContainer .right .bottom .right .chatSection .chatInput {
+    border: 1px solid #F5F5F8;
+    border-radius: 16px;
+}
+
+#userChat .userContainer .right .bottom .right .chatSection .chatInput .createpost .createpostHeading {
+    color: #070707;
+    font-size: 22px;
+    font-family: 'InterMedium';
+    margin-bottom: 18px;
+}
+#userChat .userContainer .right .bottom .right .chatSection .chatInput .createpost form .postUpload {
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    border-radius: 16px;
+}
+
+#userChat .userContainer .right .bottom .right .chatSection .chatInput .createpost .postUpload .uploadContainer {
+    display: flex;
+    justify-content: space-between;
+}
+#userChat .userContainer .right .bottom .right .chatSection .chatInput .createpost .postUpload .uploadContainer .fileUpload {
+    display: flex;
+    gap: 8px;
+}
+#userChat .userContainer .right .bottom .right .chatSection .chatInput .createpost .postUpload .uploadContainer .backgroundButton {
+    background-color: #6261B0;
+    border-radius: 8px;
+    padding: 10px 16px;
+    color: #FFFFFF;
+    text-align: end;
+}
+/* Style the chat messages */
+.chatMessage {
+    margin: 10px; /* Add some margin for spacing */
+    padding: 8px 12px; /* Add padding for better readability */
+    border-radius: 10px; /* Round the corners */
+    max-width: 70%; /* Limit the width of the message */
+}
+
+/* Style the sender's chat message */
+.senderMessage {
+    background-color: #DCF8C6; /* Light green background for sender */
+    float: right; /* Align to the right */
+}
+
+/* Style the receiver's chat message */
+.receiverMessage {
+    background-color: #FFFFFF; /* White background for receiver */
+    float: left; /* Align to the left */
+}
+
+/* Clear floats after each chat message */
+.chatMessage::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* admin-page-user */
+
+#adminUser {
+    background-color: #6261B0;
+    padding: 30px 0 30px 20px;
+    height: 100vh;
+}
+#adminUser .userContainer {
+    display: flex;
+}
+#adminUser .left {
+    width: 12%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#adminUser .userContainer .left .logoFrame {
+    width: 100px;
+    /* margin-bottom: 167px; */
+}
+#adminUser .userContainer .left nav ul li {
+    margin-bottom: 16px;
+    padding: 12px ;
+}
+#adminUser .userContainer .left nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #FFFFFF !important;
+}
+#adminUser .userContainer .left nav ul li a .navIcon {
+    width: 32px;
+}
+#adminUser .userContainer .left .logout {
+    /* margin-top: 420px; */
+    padding-left: 12px;
+}
+#adminUser .userContainer .left .logout ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #FFFFFF !important;
+}
+#adminUser .userContainer .left .logout ul li a .navIcon {
+    width: 32px;
+}
+
+#adminUser .userContainer .right {
+    background-color: #F5F5F8;
+    border-radius: 30px 0 0 30px;
+    flex: 1;
+}
+#adminUser .userContainer .right .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 32px;
+    border-radius: 30px 0 0 0;
+    border-bottom: 1px solid #EAEAEA;
+    background-color: #FFFFFF;
+}
+#adminUser .userContainer .right .top .welcomeProfile {
+    display: flex;
+    gap: 8px;
+}
+#adminUser .userContainer .right .top .welcomeProfile .welcomeName .welcome {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterMedium';
+    margin-bottom: 6px;
+}
+#adminUser .userContainer .right .top .welcomeProfile .welcomeName .name {
+    color: #070707;
+    font-size: 16px;
+    font-family: 'InterMedium';
+
+}
+#adminUser .userContainer .right .top .search {
+    border: 1px solid #EAEAEA;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 16px;
+    border-radius: 16px;
+}
+#adminUser .userContainer .right .top .search .searchIcon {
+    width: 40px;
+}
+#adminUser .userContainer .right .top .search input{
+    width: 480px;
+    color: #6f6f6f;
+    font-size: 16px;
+}
+
+#adminUser .userContainer .right .top .notification .notificationIcon {
+    width: 32px;
+}
+#adminUser .userContainer .right .bottom {
+    background-color: #F5F5F8;
+    /* display: flex; */
+    padding: 24px;
+    border-radius: 30px;
+}
+#adminUser .userContainer .right .bottom h3 {
+    color: #070707;
+    font-size: 20px;
+    font-family: 'InterMedium';
+    margin-bottom: 18px;
+}
+#adminUser .userContainer .right .bottom .tableContainer {
+    background-color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    border-radius: 16px;
+    width: 100%;
+    padding: 16px;
+}
+#adminUser .userContainer .right .bottom .tableContainer  table {
+    width: 100%;
+    border-collapse: collapse;
+
+}
+#adminUser .userContainer .right .bottom .tableContainer table thead  tr th {
+    padding: 0px 24px 24px 24px;
+    color: #070707;
+    font-size: 16px;
+    font-family: 'InterMedium';
+}
+#adminUser .userContainer .right .bottom .tableContainer table tbody {
+    background-color: #F5F5F8;
+    
+}
+#adminUser .userContainer .right .bottom .tableContainer table tbody tr {
+    text-align: center;
+}
+#adminUser .userContainer .right .bottom .tableContainer table tbody tr td {
+    padding: 24px;
+    color: #070707;
+    font-size: 16px;
+}
+
+/* admin-group */
+
+#adminGroup {
+    background-color: #6261B0;
+    padding: 30px 0 30px 20px;
+    height: 100vh;
+}
+#adminGroup .userContainer {
+    display: flex;
+}
+#adminGroup .left {
+    width: 12%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#adminGroup .userContainer .left .logoFrame {
+    width: 100px;
+    /* margin-bottom: 167px; */
+}
+#adminGroup .userContainer .left nav ul li {
+    margin-bottom: 16px;
+    padding: 12px ;
+}
+#adminGroup .userContainer .left nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #FFFFFF !important;
+}
+#adminGroup .userContainer .left nav ul li a .navIcon {
+    width: 32px;
+}
+#adminGroup .userContainer .left .logout {
+    /* margin-top: 420px; */
+    padding-left: 12px;
+}
+#adminGroup .userContainer .left .logout ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #FFFFFF !important;
+}
+#adminGroup .userContainer .left .logout ul li a .navIcon {
+    width: 32px;
+}
+
+#adminGroup .userContainer .right {
+    background-color: #F5F5F8;
+    border-radius: 30px 0 0 30px;
+    flex: 1;
+}
+#adminGroup .userContainer .right .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 32px;
+    border-radius: 30px 0 0 0;
+    border-bottom: 1px solid #EAEAEA;
+    background-color: #FFFFFF;
+}
+#adminGroup .userContainer .right .top .welcomeProfile {
+    display: flex;
+    gap: 8px;
+}
+#adminGroup .userContainer .right .top .welcomeProfile .welcomeName .welcome {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterMedium';
+    margin-bottom: 6px;
+}
+#adminGroup .userContainer .right .top .welcomeProfile .welcomeName .name {
+    color: #070707;
+    font-size: 16px;
+    font-family: 'InterMedium';
+
+}
+#adminGroup .userContainer .right .top .search {
+    border: 1px solid #EAEAEA;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 16px;
+    border-radius: 16px;
+}
+#adminGroup .userContainer .right .top .search .searchIcon {
+    width: 40px;
+}
+#adminGroup .userContainer .right .top .search input{
+    width: 480px;
+    color: #6f6f6f;
+    font-size: 16px;
+}
+
+#adminGroup .userContainer .right .top .notification .notificationIcon {
+    width: 32px;
+}
+#adminGroup .userContainer .right .bottom {
+    background-color: #F5F5F8;
+    /* display: flex; */
+    padding: 24px;
+    border-radius: 30px;
+
+}
+#adminGroup .userContainer .right .bottom h3 {
+    color: #070707;
+    font-size: 20px;
+    font-family: 'InterMedium';
+    margin-bottom: 18px;
+}
+#adminGroup .userContainer .right .bottom .tableContainer {
+    background-color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    border-radius: 16px;
+    width: 100%;
+    padding: 16px;
+}
+#adminGroup .userContainer .right .bottom .tableContainer  table {
+    width: 100%;
+    border-collapse: collapse;
+
+}
+#adminGroup .userContainer .right .bottom .tableContainer table thead  tr th {
+    padding: 0px 24px 24px 24px;
+    color: #070707;
+    font-size: 16px;
+    font-family: 'InterMedium';
+}
+#adminGroup .userContainer .right .bottom .tableContainer table tbody {
+    background-color: #F5F5F8;
+    
+}
+#adminGroup .userContainer .right .bottom .tableContainer table tbody tr {
+    text-align: center;
+}
+#adminGroup .userContainer .right .bottom .tableContainer table tbody tr td {
+    padding: 24px;
+    color: #070707;
+    font-size: 16px;
+}
+
+/* admin-report */
+
+#adminReport {
+    background-color: #6261B0;
+    padding: 30px 0 30px 20px;
+    height: 100vh;
+}
+#adminReport .userContainer {
+    display: flex;
+}
+#adminReport .left {
+    width: 12%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#adminReport .userContainer .left .logoFrame {
+    width: 100px;
+    /* margin-bottom: 167px; */
+}
+#adminReport .userContainer .left nav ul li {
+    margin-bottom: 16px;
+    padding: 12px ;
+}
+#adminReport .userContainer .left nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #FFFFFF !important;
+}
+#adminReport .userContainer .left nav ul li a .navIcon {
+    width: 32px;
+}
+#adminReport .userContainer .left .logout {
+    /* margin-top: 420px; */
+    padding-left: 12px;
+}
+#adminReport .userContainer .left .logout ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #FFFFFF !important;
+}
+#adminReport .userContainer .left .logout ul li a .navIcon {
+    width: 32px;
+}
+
+#adminReport .userContainer .right {
+    background-color: #F5F5F8;
+    border-radius: 30px 0 0 30px;
+    flex: 1;
+}
+#adminReport .userContainer .right .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 32px;
+    border-radius: 30px 0 0 0;
+    border-bottom: 1px solid #EAEAEA;
+    background-color: #FFFFFF;
+}
+#adminReport .userContainer .right .top .welcomeProfile {
+    display: flex;
+    gap: 8px;
+}
+#adminReport .userContainer .right .top .welcomeProfile .welcomeName .welcome {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-family: 'InterMedium';
+    margin-bottom: 6px;
+}
+#adminReport .userContainer .right .top .welcomeProfile .welcomeName .name {
+    color: #070707;
+    font-size: 16px;
+    font-family: 'InterMedium';
+
+}
+#adminReport .userContainer .right .top .search {
+    border: 1px solid #EAEAEA;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 16px;
+    border-radius: 16px;
+}
+#adminReport .userContainer .right .top .search .searchIcon {
+    width: 40px;
+}
+#adminReport .userContainer .right .top .search input{
+    width: 480px;
+    color: #6f6f6f;
+    font-size: 16px;
+}
+
+#adminReport .userContainer .right .top .notification .notificationIcon {
+    width: 32px;
+}
+#adminReport .userContainer .right .bottom {
+    background-color: #F5F5F8;
+    /* display: flex; */
+    padding: 24px;
+    border-radius: 30px;
+
+}
+#adminReport .userContainer .right .bottom h3 {
+    color: #070707;
+    font-size: 20px;
+    font-family: 'InterMedium';
+    margin-bottom: 18px;
+}
+#adminReport .userContainer .right .bottom .toggle-buttons {
+    margin-bottom: 18px;
+    gap: 10px;
+    display: flex;
+}
+#adminReport .userContainer .right .bottom .toggle-buttons button {
+   color: #AAAAAA;
+   font-size: 18px;
+   font-family: 'InterMedium';
+   padding: 8px 16px;
+   border-radius: 8px;
+}
+#adminReport .userContainer .right .bottom .toggle-buttons button.active {
+    background-color: #DBDBF5;
+    color: #6261B0;
+}
+#adminReport .userContainer .right .bottom .tableContainer {
+    background-color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    border-radius: 16px;
+    width: 100%;
+    padding: 16px;
+}
+#adminReport .userContainer .right .bottom .tableContainer  table {
+    width: 100%;
+    border-collapse: collapse;
+
+}
+#adminReport .userContainer .right .bottom .tableContainer table thead  tr th {
+    padding: 0px 24px 24px 24px;
+    color: #070707;
+    font-size: 16px;
+    font-family: 'InterMedium';
+}
+#adminReport .userContainer .right .bottom .tableContainer table tbody {
+    background-color: #F5F5F8;
+    
+}
+#adminReport .userContainer .right .bottom .tableContainer table tbody tr {
+    text-align: center;
+}
+#adminReport .userContainer .right .bottom .tableContainer table tbody tr td {
+    padding: 24px;
+    color: #070707;
+    font-size: 16px;
+}
+#adminReport .userContainer .right .bottom .tableContainer table tbody tr td button.delete-btn {
+    background-color: #6261B0;
+    padding: 10px 30px;
+    border-radius: 16px;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-family: 'InterMedium';
+    cursor: pointer;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 91%;
+    top: 100%;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 2000;
+    border-radius: 8px;
+}
+
+.dropdown-content a {
+    box-shadow: 0px 8px 16px 0px rgba(00,0,0.2);
+    color: #FE673A !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+.dropdown-contents {
+    display: none;
+    position: absolute;
+    /* left: 91%;
+    top: 74%; */
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.dropdown-contents a {
+    color: #FE673A !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-contents a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Modal Container */
+.modal {
+    display: none; /* Hide modal by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    backdrop-filter: blur(5px);
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #F5F5F8;
+    margin: 7% auto; /* 15% from the top and centered */
+    padding: 18px 32px;
+    border: 1px solid #888;
+    width: 40%;
+    /* max-width: 800px; */
+    border-radius: 10px;
+    position: relative;
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal .modal-content h3 {
+    color: #0A0A0A;
+    font-family: 'InterMedium';
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+.modal .modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+.modal .modal-content form label {
+    color: #9798A2;
+}
+.modal .modal-content form input {
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    width: 100%;
+}
+.modal .modal-content form .field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+.modal .modal-content form .groupImageContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+.modal .modal-content form .groupImageContainer .backgroundButton {
+    background-color: #6261B0;
+    color: #FFFFFF;
+    padding: 8px 24px;
+    width: 30%;
+    height: 40px;
+    border-radius: 8px;
+}
+.modal .modal-content form .groupImageContainer .imageContent {
+    color: #6A7683;
+    font-size: 14px;
+    line-height: 24px;
+}
+.modal .modal-content form .nameContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.modal .modal-content form .field .groupName {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+.modal .modal-content form .field .groupName input {
+    /* width: 350px; */
+}
+.modal .modal-content form .field .groupTopic {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+.modal .modal-content form .field .groupTopic input {
+    /* width: 350px; */
+}
+.modal .modal-content form .field label {
+    color: #9798A2;
+    margin-bottom: 8px;
+}
+.modal .modal-content form .field input {
+    padding: 16px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+}
+.modal .modal-content form .field select,textarea {
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    width: 100%;
+}
+.modal .modal-content form .buttonContainer {
+    display: flex;
+    justify-content: end;
+    gap: 8px;
+    margin-top: 30px;
+}
+.modal .modal-content form .buttonContainer button {
+    padding: 8px 50px;
+    border-radius: 8px;
+    color: #6261B0;
+}
+.modal .modal-content form .buttonContainer button.backgroundButton {
+    background-color: #6261B0;
+    color: #FFFFFF;
+}
+.modal .modal-content .reportList {
+    margin-top: 55px;
+}
+.modal .modal-content .reportList .eachReport {
+    background-color: #FFFFFF;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+.modal .modal-content .reportList .eachReport .report {
+    color: #070707;
+    font-size: 18px;
+}
+.modal .modal-content .buttonContainer {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    gap: 8px;
+    margin-top: 60px;
+}
+.modal .modal-content .buttonContainer button {
+    padding: 8px 50px;
+    border-radius: 8px;
+    color: #6261B0;
+    cursor: pointer;
+}
+.modal .modal-content .buttonContainer button.backgroundButton {
+    background-color: #6261B0;
+    color: #FFFFFF;
+}
+
+.notificationDropdownContent {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.notificationDropdownContent a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.notificationDropdownContent a:hover {
+    background-color: #f1f1f1;
+}
+
+.show {
+    display: block;
+}

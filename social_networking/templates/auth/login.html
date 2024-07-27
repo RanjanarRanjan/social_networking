@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section id="login">
+    <div class="left">
+        <div class="logoFrame">
+            <img src="{% static '/images/logo.svg' %}" alt="logo" />
+        </div>
+    </div>
+    <div class="right">
+        <div class="formContainer">
+            <h2>Login</h2>
+            <p>Please complete to create your account</p>
+            <form id="loginForm" method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                <label for="username">Username:</label><br />
+                <input type="text" id="username" name="username" /><br />
+                <label for="password">Password:</label><br />
+                <input
+                    type="password"
+                    id="password"
+                    name="password" /><br /><br />
+                <button type="submit" class="backgroundButton">Login</button>
+            </form>
+            <div class="accountRegister">
+                <p class="account">Don't have an account?</p>
+                <a href="{% url 'registration' %}">Create new account</a>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+{% if message %}
+<script>
+    swal(
+        "Failed!",
+        "{{message}}",
+        "error"
+    );
+</script>
+{% endif %} {% endblock %}

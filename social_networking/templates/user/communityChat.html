@@ -1,0 +1,303 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section id="communityChat">
+    <div class="userContainer">
+        <div class="left">
+            <div class="logoFrame">
+                <img src="{% static '/images/logo.svg' %}" alt="logo" />
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="{% url 'user_home' %}">
+                            <div class="navIcon">
+                                <img
+                                    src="{% static '/images/home.svg' %}"
+                                    alt="home" />
+                            </div>
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'user_chat' %}">
+                            <div class="navIcon">
+                                <img
+                                    src="{% static '/images/chat-icon.svg' %}"
+                                    alt="chats" />
+                            </div>
+                            Chats
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'user_profile' %}">
+                            <div class="navIcon">
+                                <img
+                                    src="{% static '/images/profile-icon.svg' %}"
+                                    alt="profile" />
+                            </div>
+                            Profile
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="navIcon">
+                                <img
+                                    src="{% static '/images/settings-icon.svg' %}"
+                                    alt="settings" />
+                            </div>
+                            Settings
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="logout">
+                <ul>
+                    <li>
+                        <a href="#" onclick="confirmLogout()">
+                            <div class="navIcon">
+                                <img src="{% static '/images/logout-icon.svg' %}" alt="logout" />
+                            </div>
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="right">
+            <div class="top">
+                <div class="welcomeProfile">
+                    <div class="profileImage">
+                        <img
+                            src="{% static '/images/user-profile-image.png' %}"
+                            alt="profile-image" />
+                    </div>
+                    <div class="welcomeName">
+                        <p class="welcome">Hai , Welcome</p>
+                        <p class="name">Rodger Struck</p>
+                    </div>
+                </div>
+                <div class="search">
+                    <div class="searchIcon">
+                        <img
+                            src="{% static '/images/search-icon.svg' %}"
+                            alt="search" />
+                    </div>
+                    <input type="text" placeholder="Type profile" />
+                </div>
+                <div
+                    class="notification"
+                    onclick="updateAboutSection(); renderFriendRequests();">
+                    <div class="notificationIcon">
+                        <img
+                            src="{% static '/images/notification-icon.svg' %}"
+                            alt="notification" />
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="chatSection">
+                    <div class="chatHeading">
+                        -
+                        <span class="familyPhoto"
+                            ><img
+                                src="{% static '/images/family-photo.png' %}"
+                                alt="" /></span
+                        >Our family group
+                    </div>
+                    <div class="chatBody">
+                        <div class="receiver">
+                            <div class="receiverImage">
+                                <img
+                                    src="{% static '/images/receiver-image.png' %}"
+                                    alt="receiver-image" />
+                            </div>
+                            <div class="receiverMessage">
+                                <p class="message">
+                                    Lorem ipsum dolor sit amet consectetur,
+                                    adipisicing elit. Doloribus velit harum
+                                    ducimus.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="sender">
+                            <div class="senderImage">
+                                <img
+                                    src="{% static '/images/sender-image.png' %}"
+                                    alt="sender-image" />
+                            </div>
+                            <div class="senderMessage">
+                                <p class="message">
+                                    Lorem ipsum dolor sit amet consectetur.
+                                    Varius purus erat commodo accumsan massa
+                                </p>
+                            </div>
+                        </div>
+                        <div class="receiver">
+                            <div class="receiverImage">
+                                <img
+                                    src="{% static '/images/receiver-image.png' %}"
+                                    alt="receiver-image" />
+                            </div>
+                            <div class="receiverMessage">
+                                <p class="message">
+                                    Lorem ipsum dolor sit amet consectetur,
+                                    adipisicing elit. Doloribus velit harum
+                                    ducimus.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="sender">
+                            <div class="senderImage">
+                                <img
+                                    src="{% static '/images/sender-image.png' %}"
+                                    alt="sender-image" />
+                            </div>
+                            <div class="senderMessage">
+                                <p class="message">
+                                    Lorem ipsum dolor sit amet consectetur.
+                                    Varius purus erat commodo accumsan massa
+                                </p>
+                            </div>
+                        </div>
+                        <div class="receiver">
+                            <div class="receiverImage">
+                                <img
+                                    src="{% static '/images/receiver-image.png' %}"
+                                    alt="receiver-image" />
+                            </div>
+                            <div class="receiverMessage">
+                                <p class="message">
+                                    Lorem ipsum dolor sit amet consectetur,
+                                    adipisicing elit. Doloribus velit harum
+                                    ducimus.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="sender">
+                            <div class="senderImage">
+                                <img
+                                    src="{% static '/images/sender-image.png' %}"
+                                    alt="sender-image" />
+                            </div>
+                            <div class="senderMessage">
+                                <p class="message">
+                                    Lorem ipsum dolor sit amet consectetur.
+                                    Varius purus erat commodo accumsan massa
+                                </p>
+                            </div>
+                        </div>
+                        <div class="receiver">
+                            <div class="receiverImage">
+                                <img
+                                    src="{% static '/images/receiver-image.png' %}"
+                                    alt="receiver-image" />
+                            </div>
+                            <div class="receiverMessage">
+                                <p class="message">
+                                    Lorem ipsum dolor sit amet consectetur,
+                                    adipisicing elit. Doloribus velit harum
+                                    ducimus.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="sender">
+                            <div class="senderImage">
+                                <img
+                                    src="{% static '/images/sender-image.png' %}"
+                                    alt="sender-image" />
+                            </div>
+                            <div class="senderMessage">
+                                <p class="message">
+                                    Lorem ipsum dolor sit amet consectetur.
+                                    Varius purus erat commodo accumsan massa
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chatInput">
+                        <div class="createpost">
+                            <form action="">
+                                <div class="postUpload">
+                                    <div class="inputContainer">
+                                        <textarea
+                                            name="post"
+                                            placeholder="What do you want to talk about"
+                                            rows="5"
+                                            cols="30"
+                                            style="resize: none;"></textarea>
+                                    </div>
+                                    <div class="uploadContainer">
+                                        <div class="fileUpload">
+                                            <div class="videoUpload">
+                                                <img
+                                                    src="{% static '/images/video-icon.svg' %}"
+                                                    alt="video-upload" />
+                                                <input
+                                                    id="videoInput"
+                                                    type="file"
+                                                    accept="video/*"
+                                                    required
+                                                    hidden
+                                                    name="video_file" />
+                                            </div>
+                                            <div class="imageUpload">
+                                                <img
+                                                    src="{% static '/images/image-icon.svg' %}"
+                                                    alt="image-upload" />
+                                                <input
+                                                    id="imageInput"
+                                                    type="file"
+                                                    accept="image/*"
+                                                    required
+                                                    hidden
+                                                    name="image_file" />
+                                            </div>
+                                        </div>
+                                        <button class="backgroundButton">
+                                            send
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div id="logoutModal" class="modal">
+    <div class="modal-content">
+        <h3>Logout</h3>
+        <p>Are you sure you want to logout?</p>
+        <div class="modal-buttons buttonContainer">
+            <button onclick="cancelLogout()">Cancel</button>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function confirmLogout() {
+        var modal = document.getElementById('logoutModal');
+        modal.style.display = 'block';
+    }
+
+    function cancelLogout() {
+        var modal = document.getElementById('logoutModal');
+        modal.style.display = 'none';
+    }
+
+    function logout() {
+        // Redirect the user to the logout URL or perform any logout action here
+        window.location.href = '/login';
+    }
+
+    // Close the modal if the user clicks outside of it
+    window.onclick = function(event) {
+        var modal = document.getElementById('logoutModal');
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+</script>
+{% endblock %}

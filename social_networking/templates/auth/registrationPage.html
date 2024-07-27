@@ -1,0 +1,120 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section id="registration">
+    <div class="left">
+        <div class="logoFrame">
+            <img src="{% static '/images/logo.svg' %}" alt="logo" />
+        </div>
+    </div>
+    <div class="right">
+        <div class="formContainer">
+            <h2>Create new account</h2>
+            <p>Please complete to create your account</p>
+            {% if error_message %}
+            <div class="error-message">
+                <p>{{ error_message }}</p>
+            </div>
+            {% endif %}
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="flexContainer">
+                    <div class="field">
+                        <label for="firstname">First Name:</label>
+                        <input type="text" id="first_name" name="first_name" />
+                    </div>
+                    <div class="field">
+                        <label for="lastname">Last Name:</label>
+                        <input type="text" id="last_name" name="last_name" />
+                    </div>
+                </div>
+                <div class="flexContainer">
+                    <div class="field">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" />
+                    </div>
+                    <div class="field">
+                        <div class="genderContainer">
+                            <label for="gender">Gender:</label>
+                            <div class="bottom">
+                                <div class="alignCenter">
+                                    <input
+                                        class="radio"
+                                        type="radio"
+                                        id="male"
+                                        name="gender"
+                                        value="male" />
+                                    <label for="male">Male</label>
+                                </div>
+                                <div class="alignCenter">
+                                    <input
+                                        class="radio"
+                                        type="radio"
+                                        id="female"
+                                        name="gender"
+                                        value="female" />
+                                    <label for="female">Female</label>
+                                </div>
+                                <div class="alignCenter">
+                                    <input
+                                        class="radio"
+                                        type="radio"
+                                        id="other"
+                                        name="gender"
+                                        value="other" />
+                                    <label for="other">Other</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="interest">Select Your Interest:</label>
+                    <select id="interest" name="interest[]" class="interest">
+                        <option >
+                            Please select
+                        </option>
+                        {% for interest in interests %}
+                        <option value="{{ interest.id }}">
+                            {{ interest.title }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" />
+                </div>
+                <div class="flexContainer">
+                    <div class="field">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" />
+                    </div>
+                    <div class="field">
+                        <label for="confirm_password">Confirm Password:</label>
+                        <input
+                            type="password"
+                            id="confirm_password"
+                            name="confirm_password" />
+                    </div>
+                </div>
+                <button type="submit" class="backgroundButton">
+                    Create new account
+                </button>
+            </form>
+            <div class="accountRegister">
+                <p class="account">Already have an account?</p>
+                <a href="{% url 'login' %}">Login here</a>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+        {% if message %}
+        <script>
+            swal(
+                "Failed!",
+                "{{message}}",
+                "error"
+            );
+        </script>
+        {% endif %}
+{% endblock %}

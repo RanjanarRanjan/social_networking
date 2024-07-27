@@ -1,0 +1,27 @@
+## Django ###
+*.pyc
+*.DS_Store
+
+**/migrations/
+*/migrations/*
+!**/migrations
+!**/migrations/_init_.py
+
+*/__pycache__/*
+*.log
+
+db.sqlite3
+db.sqlite3-journal
+venv
+htmlcov
+
+media/**
+
+
+
+!media/static
+
+.vscode
+*.ini
+.git_credentials
+gitpush
